@@ -1,0 +1,4 @@
+maturin
+PySide6
+pydantic
+pyyaml

@@ -1,0 +1,1592 @@
+---
+characters:
+  - pid: PID_ギュンター
+    voice_set: GUNTHER
+    gender: male
+    class_level: advanced
+    generation: 1
+  - pid: PID_フェリシア
+    voice_set: FELICIA
+    gender: female
+    class_level: advanced
+    generation: 1
+  - pid: PID_ジョーカー
+    voice_set: JOKER
+    gender: male
+    class_level: advanced
+    generation: 1
+  - pid: PID_リンカ
+    voice_set: RINKA
+    gender: female
+    class_level: base
+    generation: 1
+  - pid: PID_スズカゼ
+    voice_set: SUZUKAZE
+    gender: male
+    class_level: base
+    generation: 1
+  - pid: PID_サクラ
+    voice_set: SAKURA
+    gender: female
+    class_level: base
+    generation: 1
+  - pid: PID_アクア
+    voice_set: AQUA
+    gender: female
+    class_level: base
+    generation: 1
+  - pid: PID_カザハナ
+    voice_set: KAZAHANA
+    gender: female
+    class_level: base
+    generation: 1
+  - pid: PID_ツバキ
+    voice_set: TSUBAKI
+    gender: male
+    class_level: base
+    generation: 1
+  - pid: PID_サイラス
+    voice_set: SILAS
+    gender: male
+    class_level: base
+    generation: 1
+  - pid: PID_サイゾウ
+    voice_set: SAIZOU
+    gender: male
+    class_level: base
+    generation: 1
+  - pid: PID_オロチ
+    voice_set: OROCHI
+    gender: female
+    class_level: base
+    generation: 1
+  - pid: PID_ヒノカ
+    voice_set: HINOKA
+    gender: female
+    class_level: base
+    generation: 1
+  - pid: PID_アサマ
+    voice_set: ASAMA
+    gender: male
+    class_level: base
+    generation: 1
+  - pid: PID_セツナ
+    voice_set: SETSUNA
+    gender: female
+    class_level: base
+    generation: 1
+  - pid: PID_ツクヨミ
+    voice_set: TSUKUYOMI
+    gender: male
+    class_level: base
+    generation: 1
+  - pid: PID_オボロ
+    voice_set: OBORO
+    gender: female
+    class_level: base
+    generation: 1
+  - pid: PID_ヒナタ
+    voice_set: HINATA
+    gender: male
+    class_level: base
+    generation: 1
+  - pid: PID_タクミ
+    voice_set: TAKUMI
+    gender: male
+    class_level: base
+    generation: 1
+  - pid: PID_カゲロウ
+    voice_set: KAGEROU
+    gender: female
+    class_level: base
+    generation: 1
+  - pid: PID_ユウギリ
+    voice_set: YUUGIRI
+    gender: female
+    class_level: advanced
+    generation: 1
+  - pid: PID_ニシキ
+    voice_set: NISHIKI
+    gender: male
+    class_level: base
+    generation: 1
+  - pid: PID_リョウマ
+    voice_set: RYOUMA
+    gender: male
+    class_level: advanced
+    generation: 1
+  - pid: PID_クリムゾン
+    voice_set: CRIMSON
+    gender: female
+    class_level: advanced
+    generation: 1
+  - pid: PID_アシュラ
+    voice_set: ASYURA
+    gender: male
+    class_level: advanced
+    generation: 1
+  - pid: PID_エリーゼ
+    voice_set: ELISE
+    gender: female
+    class_level: base
+    generation: 1
+  - pid: PID_ハロルド
+    voice_set: HAROLD
+    gender: male
+    class_level: base
+    generation: 1
+  - pid: PID_エルフィ
+    voice_set: ELFI
+    gender: female
+    class_level: base
+    generation: 1
+  - pid: PID_オーディン
+    voice_set: ODIN
+    gender: male
+    class_level: base
+    generation: 1
+  - pid: PID_ゼロ
+    voice_set: ZERO
+    gender: male
+    class_level: base
+    generation: 1
+  - pid: PID_ニュクス
+    voice_set: NYX
+    gender: female
+    class_level: base
+    generation: 1
+  - pid: PID_カミラ
+    voice_set: CAMILLA
+    gender: female
+    class_level: advanced
+    generation: 1
+  - pid: PID_ルーナ
+    voice_set: LUNA
+    gender: female
+    class_level: base
+    generation: 1
+  - pid: PID_ベルカ
+    voice_set: BERKA
+    gender: female
+    class_level: base
+    generation: 1
+  - pid: PID_ラズワルド
+    voice_set: LAZWARD
+    gender: male
+    class_level: base
+    generation: 1
+  - pid: PID_ピエリ
+    voice_set: PIERI
+    gender: female
+    class_level: base
+    generation: 1
+  - pid: PID_ブノワ
+    voice_set: BENOIT
+    gender: male
+    class_level: base
+    generation: 1
+  - pid: PID_シャーロッテ
+    voice_set: CHARLOTTE
+    gender: female
+    class_level: base
+    generation: 1
+  - pid: PID_レオン
+    voice_set: LEON
+    gender: male
+    class_level: advanced
+    generation: 1
+  - pid: PID_フランネル
+    voice_set: FLANNEL
+    gender: male
+    class_level: base
+    generation: 1
+  - pid: PID_マークス
+    voice_set: MARKS
+    gender: male
+    class_level: advanced
+    generation: 1
+  - pid: PID_イザナ
+    voice_set: IZANA
+    gender: male
+    class_level: advanced
+    generation: 1
+  - pid: PID_フウガ
+    voice_set: FUUGA
+    gender: male
+    class_level: advanced
+    generation: 1
+  - pid: PID_ユキムラ
+    voice_set: YUKIMURA
+    gender: male
+    class_level: advanced
+    generation: 1
+  - pid: PID_フローラ
+    voice_set: FLORA
+    gender: female
+    class_level: advanced
+    generation: 1
+  - pid: PID_モズメ
+    voice_set: MOZUME
+    gender: female
+    class_level: base
+    generation: 1
+  - pid: PID_カンナ男
+    voice_set: KANNA_M
+    gender: male
+    class_level: base
+    generation: 2
+  - pid: PID_カンナ女
+    voice_set: KANNA_F
+    gender: female
+    class_level: base
+    generation: 2
+  - pid: PID_シグレ
+    voice_set: SHIGURE
+    gender: male
+    class_level: base
+    generation: 2
+  - pid: PID_ディーア
+    voice_set: DEERE
+    gender: male
+    class_level: base
+    generation: 2
+  - pid: PID_ゾフィー
+    voice_set: SOPHIE
+    gender: female
+    class_level: base
+    generation: 2
+  - pid: PID_ミドリコ
+    voice_set: MIDORIKO
+    gender: female
+    class_level: base
+    generation: 2
+  - pid: PID_シノノメ
+    voice_set: SHINONOME
+    gender: male
+    class_level: base
+    generation: 2
+  - pid: PID_キサラギ
+    voice_set: KISARAGI
+    gender: male
+    class_level: base
+    generation: 2
+  - pid: PID_グレイ
+    voice_set: GUREI
+    gender: male
+    class_level: base
+    generation: 2
+  - pid: PID_キヌ
+    voice_set: KINU
+    gender: female
+    class_level: base
+    generation: 2
+  - pid: PID_ヒサメ
+    voice_set: HISAME
+    gender: male
+    class_level: base
+    generation: 2
+  - pid: PID_ミタマ
+    voice_set: MITAMA
+    gender: female
+    class_level: base
+    generation: 2
+  - pid: PID_マトイ
+    voice_set: MATOI
+    gender: female
+    class_level: base
+    generation: 2
+  - pid: PID_シャラ
+    voice_set: SYALLA
+    gender: female
+    class_level: base
+    generation: 2
+  - pid: PID_ジークベルト
+    voice_set: SIEGBERT
+    gender: male
+    class_level: base
+    generation: 2
+  - pid: PID_フォレオ
+    voice_set: FOLEO
+    gender: male
+    class_level: base
+    generation: 2
+  - pid: PID_イグニス
+    voice_set: IGNIS
+    gender: male
+    class_level: base
+    generation: 2
+  - pid: PID_ベロア
+    voice_set: VELOUR
+    gender: female
+    class_level: base
+    generation: 2
+  - pid: PID_ルッツ
+    voice_set: LUTZ
+    gender: male
+    class_level: base
+    generation: 2
+  - pid: PID_オフェリア
+    voice_set: OPHELIA
+    gender: female
+    class_level: base
+    generation: 2
+  - pid: PID_ソレイユ
+    voice_set: SOLEIL
+    gender: female
+    class_level: base
+    generation: 2
+  - pid: PID_エポニーヌ
+    voice_set: EPONINE
+    gender: female
+    class_level: base
+    generation: 2
+  - pid: PID_アンナ
+    voice_set: ANNA
+    gender: female
+    class_level: base
+    generation: 1
+    flags: [ "anna" ]
+  - pid: PID_マルス
+    voice_set: MARTH
+    gender: male
+    class_level: base
+    generation: 1
+    flags: [ "amiibo" ]
+  - pid: PID_アイク
+    voice_set: IKE
+    gender: male
+    class_level: base
+    generation: 1
+    flags: [ "amiibo" ]
+  - pid: PID_ルキナ
+    voice_set: LUCINA
+    gender: female
+    class_level: base
+    generation: 1
+    flags: [ "amiibo" ]
+  - pid: PID_ルフレ
+    voice_set: REFLET
+    gender: male
+    class_level: base
+    generation: 1
+    flags: [ "amiibo" ]
+classes:
+  - jid: JID_ダークブラッド男
+    gender: male
+    level: advanced
+    paired_classes: [ "JID_ダークプリンス男", "JID_無し男" ]
+  - jid: JID_ダークブラッド女
+    gender: female
+    level: advanced
+    paired_classes: [ "JID_ダークプリンセス女", "JID_無し男" ]
+  - jid: JID_ダークプリンス男
+    gender: male
+    level: base
+    paired_classes: [ "JID_ダークブラッド男", "JID_白の血族男" ]
+  - jid: JID_ダークプリンセス女
+    gender: female
+    level: base
+    paired_classes: [ "JID_ダークブラッド女", "JID_白の血族女" ]
+  - jid: JID_白の血族男
+    gender: male
+    level: advanced
+    paired_classes: [ "JID_ダークプリンス男", "JID_無し男" ]
+  - jid: JID_白の血族女
+    gender: female
+    level: advanced
+    paired_classes: [ "JID_ダークプリンセス女", "JID_無し男" ]
+  - jid: JID_パラディン男
+    gender: male
+    level: advanced
+    paired_classes: [ "JID_ソシアルナイト男", "JID_無し男" ]
+  - jid: JID_パラディン女
+    gender: female
+    level: advanced
+    paired_classes: [ "JID_ソシアルナイト女", "JID_無し男" ]
+  - jid: JID_ソシアルナイト男
+    gender: male
+    level: base
+    paired_classes: [ "JID_パラディン男", "JID_グレートナイト男" ]
+  - jid: JID_ソシアルナイト女
+    gender: female
+    level: base
+    paired_classes: [ "JID_パラディン女", "JID_グレートナイト女" ]
+  - jid: JID_グレートナイト男
+    gender: male
+    level: advanced
+    paired_classes: [ "JID_ソシアルナイト男", "JID_アーマーナイト男" ]
+  - jid: JID_グレートナイト女
+    gender: female
+    level: advanced
+    paired_classes: [ "JID_ソシアルナイト女", "JID_アーマーナイト女" ]
+  - jid: JID_アーマーナイト男
+    gender: male
+    level: base
+    paired_classes: [ "JID_ジェネラル男", "JID_グレートナイト男" ]
+  - jid: JID_アーマーナイト女
+    gender: female
+    level: base
+    paired_classes: [ "JID_ジェネラル女", "JID_グレートナイト女" ]
+  - jid: JID_ジェネラル男
+    gender: male
+    level: advanced
+    paired_classes: [ "JID_アーマーナイト男", "JID_無し男" ]
+  - jid: JID_ジェネラル女
+    gender: female
+    level: advanced
+    paired_classes: [ "JID_アーマーナイト女", "JID_無し男" ]
+  - jid: JID_バーサーカー男
+    gender: male
+    level: advanced
+    paired_classes: [ "JID_アクスファイター男", "JID_無し男" ]
+  - jid: JID_バーサーカー女
+    gender: female
+    level: advanced
+    paired_classes: [ "JID_アクスファイター女", "JID_無し男" ]
+  - jid: JID_アクスファイター男
+    gender: male
+    level: base
+    paired_classes: [ "JID_バーサーカー男", "JID_ブレイブヒーロー男" ]
+  - jid: JID_アクスファイター女
+    gender: female
+    level: base
+    paired_classes: [ "JID_バーサーカー女", "JID_ブレイブヒーロー女" ]
+  - jid: JID_ブレイブヒーロー男
+    gender: male
+    level: advanced
+    paired_classes: [ "JID_アクスファイター男", "JID_マーシナリー男" ]
+  - jid: JID_ブレイブヒーロー女
+    gender: female
+    level: advanced
+    paired_classes: [ "JID_アクスファイター女", "JID_マーシナリー女" ]
+  - jid: JID_マーシナリー男
+    gender: male
+    level: base
+    paired_classes: [ "JID_ブレイブヒーロー男", "JID_ボウナイト男" ]
+  - jid: JID_マーシナリー女
+    gender: female
+    level: base
+    paired_classes: [ "JID_ブレイブヒーロー女", "JID_ボウナイト女" ]
+  - jid: JID_ボウナイト男
+    gender: male
+    level: advanced
+    paired_classes: [ "JID_マーシナリー男", "JID_シーフ男" ]
+  - jid: JID_ボウナイト女
+    gender: female
+    level: advanced
+    paired_classes: [ "JID_マーシナリー女", "JID_シーフ女" ]
+  - jid: JID_シーフ男
+    gender: male
+    level: base
+    paired_classes: [ "JID_アドベンチャラー男", "JID_ボウナイト男" ]
+  - jid: JID_シーフ女
+    gender: female
+    level: base
+    paired_classes: [ "JID_アドベンチャラー女", "JID_ボウナイト女" ]
+  - jid: JID_アドベンチャラー男
+    gender: male
+    level: advanced
+    paired_classes: [ "JID_シーフ男", "JID_無し男" ]
+  - jid: JID_アドベンチャラー女
+    gender: female
+    level: advanced
+    paired_classes: [ "JID_シーフ女", "JID_無し男" ]
+  - jid: JID_剣聖男
+    gender: male
+    level: advanced
+    paired_classes: [ "JID_侍男", "JID_無し男" ]
+  - jid: JID_剣聖女
+    gender: female
+    level: advanced
+    paired_classes: [ "JID_侍女", "JID_無し男" ]
+  - jid: JID_侍男
+    gender: male
+    level: base
+    paired_classes: [ "JID_剣聖男", "JID_兵法者男" ]
+  - jid: JID_侍女
+    gender: female
+    level: base
+    paired_classes: [ "JID_剣聖女", "JID_兵法者女" ]
+  - jid: JID_兵法者男
+    gender: male
+    level: advanced
+    paired_classes: [ "JID_侍男", "JID_村人男" ]
+  - jid: JID_兵法者女
+    gender: female
+    level: advanced
+    paired_classes: [ "JID_侍女", "JID_村人女" ]
+  - jid: JID_修羅男
+    gender: male
+    level: advanced
+    paired_classes: [ "JID_鬼人男", "JID_無し男" ]
+  - jid: JID_修羅女
+    gender: female
+    level: advanced
+    paired_classes: [ "JID_鬼人女", "JID_無し男" ]
+  - jid: JID_鬼人男
+    gender: male
+    level: base
+    paired_classes: [ "JID_修羅男", "JID_鍛冶男" ]
+  - jid: JID_鬼人女
+    gender: female
+    level: base
+    paired_classes: [ "JID_修羅女", "JID_鍛冶女" ]
+  - jid: JID_鍛冶男
+    gender: male
+    level: advanced
+    paired_classes: [ "JID_鬼人男", "JID_無し男" ]
+  - jid: JID_鍛冶女
+    gender: female
+    level: advanced
+    paired_classes: [ "JID_鬼人女", "JID_無し男" ]
+  - jid: JID_槍聖男
+    gender: male
+    level: advanced
+    paired_classes: [ "JID_槍術士男", "JID_無し男" ]
+  - jid: JID_槍聖女
+    gender: female
+    level: advanced
+    paired_classes: [ "JID_槍術士女", "JID_無し男" ]
+  - jid: JID_槍術士男
+    gender: male
+    level: base
+    paired_classes: [ "JID_槍聖男", "JID_婆娑羅男" ]
+  - jid: JID_槍術士女
+    gender: female
+    level: base
+    paired_classes: [ "JID_槍聖女", "JID_婆娑羅女" ]
+  - jid: JID_婆娑羅男
+    gender: male
+    level: advanced
+    paired_classes: [ "JID_槍術士男", "JID_呪い師男" ]
+  - jid: JID_婆娑羅女
+    gender: female
+    level: advanced
+    paired_classes: [ "JID_槍術士女", "JID_呪い師女" ]
+  - jid: JID_呪い師男
+    gender: male
+    level: base
+    paired_classes: [ "JID_陰陽師男", "JID_婆娑羅男" ]
+  - jid: JID_呪い師女
+    gender: female
+    level: base
+    paired_classes: [ "JID_陰陽師女", "JID_婆娑羅女" ]
+  - jid: JID_陰陽師男
+    gender: male
+    level: advanced
+    paired_classes: [ "JID_呪い師男", "JID_修験者男" ]
+  - jid: JID_陰陽師女
+    gender: female
+    level: advanced
+    paired_classes: [ "JID_呪い師女", "JID_巫女女" ]
+  - jid: JID_修験者男
+    gender: male
+    level: base
+    paired_classes: [ "JID_山伏男", "JID_陰陽師男" ]
+  - jid: JID_巫女女
+    gender: female
+    level: base
+    paired_classes: [ "JID_戦巫女女", "JID_陰陽師女" ]
+  - jid: JID_山伏男
+    gender: male
+    level: advanced
+    paired_classes: [ "JID_修験者男", "JID_無し男" ]
+  - jid: JID_戦巫女女
+    gender: female
+    level: advanced
+    paired_classes: [ "JID_巫女女", "JID_無し男" ]
+  - jid: JID_聖天馬武者男
+    gender: male
+    level: advanced
+    paired_classes: [ "JID_天馬武者男", "JID_無し男" ]
+  - jid: JID_聖天馬武者女
+    gender: female
+    level: advanced
+    paired_classes: [ "JID_天馬武者女", "JID_無し男" ]
+  - jid: JID_天馬武者男
+    gender: male
+    level: base
+    paired_classes: [ "JID_聖天馬武者男", "JID_金鵄武者男" ]
+  - jid: JID_天馬武者女
+    gender: female
+    level: base
+    paired_classes: [ "JID_聖天馬武者女", "JID_金鵄武者女" ]
+  - jid: JID_金鵄武者男
+    gender: male
+    level: advanced
+    paired_classes: [ "JID_天馬武者男", "JID_弓使い男" ]
+  - jid: JID_金鵄武者女
+    gender: female
+    level: advanced
+    paired_classes: [ "JID_天馬武者女", "JID_弓使い女" ]
+  - jid: JID_弓使い男
+    gender: male
+    level: base
+    paired_classes: [ "JID_弓聖男", "JID_金鵄武者男" ]
+  - jid: JID_弓使い女
+    gender: female
+    level: base
+    paired_classes: [ "JID_弓聖女", "JID_金鵄武者女" ]
+  - jid: JID_弓聖男
+    gender: male
+    level: advanced
+    paired_classes: [ "JID_弓使い男", "JID_無し男" ]
+  - jid: JID_弓聖女
+    gender: female
+    level: advanced
+    paired_classes: [ "JID_弓使い女", "JID_無し男" ]
+  - jid: JID_ドラゴンマスター男
+    gender: male
+    level: advanced
+    paired_classes: [ "JID_ドラゴンナイト男", "JID_無し男" ]
+  - jid: JID_ドラゴンマスター女
+    gender: female
+    level: advanced
+    paired_classes: [ "JID_ドラゴンナイト女", "JID_無し男" ]
+  - jid: JID_ドラゴンナイト男
+    gender: male
+    level: base
+    paired_classes: [ "JID_ドラゴンマスター男", "JID_レヴナントナイト男" ]
+  - jid: JID_ドラゴンナイト女
+    gender: female
+    level: base
+    paired_classes: [ "JID_ドラゴンマスター女", "JID_レヴナントナイト女" ]
+  - jid: JID_レヴナントナイト男
+    gender: male
+    level: advanced
+    paired_classes: [ "JID_ドラゴンナイト男", "JID_無し男" ]
+  - jid: JID_レヴナントナイト女
+    gender: female
+    level: advanced
+    paired_classes: [ "JID_ドラゴンナイト女", "JID_無し男" ]
+  - jid: JID_上忍男
+    gender: male
+    level: advanced
+    paired_classes: [ "JID_忍男", "JID_無し男" ]
+  - jid: JID_上忍女
+    gender: female
+    level: advanced
+    paired_classes: [ "JID_忍女", "JID_無し男" ]
+  - jid: JID_忍男
+    gender: male
+    level: base
+    paired_classes: [ "JID_上忍男", "JID_絡繰師男" ]
+  - jid: JID_忍女
+    gender: female
+    level: base
+    paired_classes: [ "JID_上忍女", "JID_絡繰師女" ]
+  - jid: JID_絡繰師男
+    gender: male
+    level: advanced
+    paired_classes: [ "JID_忍男", "JID_薬商人男" ]
+  - jid: JID_絡繰師女
+    gender: female
+    level: advanced
+    paired_classes: [ "JID_忍女", "JID_薬商人女" ]
+  - jid: JID_薬商人男
+    gender: male
+    level: base
+    paired_classes: [ "JID_大商人男", "JID_絡繰師男" ]
+  - jid: JID_薬商人女
+    gender: female
+    level: base
+    paired_classes: [ "JID_大商人女", "JID_絡繰師女" ]
+  - jid: JID_大商人男
+    gender: male
+    level: advanced
+    paired_classes: [ "JID_薬商人男", "JID_村人男" ]
+  - jid: JID_大商人女
+    gender: female
+    level: advanced
+    paired_classes: [ "JID_薬商人女", "JID_村人女" ]
+  - jid: JID_ソーサラー男
+    gender: male
+    level: advanced
+    paired_classes: [ "JID_ダークマージ男", "JID_無し男" ]
+  - jid: JID_ソーサラー女
+    gender: female
+    level: advanced
+    paired_classes: [ "JID_ダークマージ女", "JID_無し男" ]
+  - jid: JID_ダークマージ男
+    gender: male
+    level: base
+    paired_classes: [ "JID_ソーサラー男", "JID_ダークナイト男" ]
+  - jid: JID_ダークマージ女
+    gender: female
+    level: base
+    paired_classes: [ "JID_ソーサラー女", "JID_ダークナイト女" ]
+  - jid: JID_ダークナイト男
+    gender: male
+    level: advanced
+    paired_classes: [ "JID_ダークマージ男", "JID_無し男" ]
+  - jid: JID_ダークナイト女
+    gender: female
+    level: advanced
+    paired_classes: [ "JID_ダークマージ女", "JID_無し男" ]
+  - jid: JID_ストラテジスト男
+    gender: male
+    level: advanced
+    paired_classes: [ "JID_ロッドナイト男", "JID_無し男" ]
+  - jid: JID_ストラテジスト女
+    gender: female
+    level: advanced
+    paired_classes: [ "JID_ロッドナイト女", "JID_無し男" ]
+  - jid: JID_ロッドナイト男
+    gender: male
+    level: base
+    paired_classes: [ "JID_ストラテジスト男", "JID_バトラー男" ]
+  - jid: JID_ロッドナイト女
+    gender: female
+    level: base
+    paired_classes: [ "JID_ストラテジスト女", "JID_メイド女" ]
+  - jid: JID_バトラー男
+    gender: male
+    level: advanced
+    paired_classes: [ "JID_ロッドナイト男", "JID_無し男" ]
+  - jid: JID_メイド女
+    gender: female
+    level: advanced
+    paired_classes: [ "JID_ロッドナイト女", "JID_無し男" ]
+  - jid: JID_ガルー男
+    gender: male
+    level: base
+    paired_classes: [ "JID_マーナガルム男", "JID_無し男" ]
+  - jid: JID_ガルー女
+    gender: female
+    level: base
+    paired_classes: [ "JID_マーナガルム女", "JID_無し男" ]
+  - jid: JID_マーナガルム男
+    gender: male
+    level: advanced
+    paired_classes: [ "JID_ガルー男", "JID_無し男" ]
+  - jid: JID_マーナガルム女
+    gender: female
+    level: advanced
+    paired_classes: [ "JID_ガルー女", "JID_無し男" ]
+  - jid: JID_妖狐男
+    gender: male
+    level: base
+    paired_classes: [ "JID_九尾の狐男", "JID_無し男" ]
+  - jid: JID_妖狐女
+    gender: female
+    level: base
+    paired_classes: [ "JID_九尾の狐女", "JID_無し男" ]
+  - jid: JID_九尾の狐男
+    gender: male
+    level: advanced
+    paired_classes: [ "JID_妖狐男", "JID_無し男" ]
+  - jid: JID_九尾の狐女
+    gender: female
+    level: advanced
+    paired_classes: [ "JID_妖狐女", "JID_無し男" ]
+  - jid: JID_歌姫女
+    gender: female
+    level: base
+    paired_classes: [ "JID_無し男", "JID_無し男" ]
+  - jid: JID_村人男
+    gender: male
+    level: base
+    paired_classes: [ "JID_大商人男", "JID_兵法者男" ]
+  - jid: JID_村人女
+    gender: female
+    level: base
+    paired_classes: [ "JID_大商人女", "JID_兵法者女" ]
+  - jid: JID_スターロード男
+    gender: male
+    level: advanced
+    paired_classes: [ "JID_無し男", "JID_無し男" ]
+  - jid: JID_ヴァンガード男
+    gender: male
+    level: advanced
+    paired_classes: [ "JID_無し男", "JID_無し男" ]
+  - jid: JID_神軍師男
+    gender: male
+    level: advanced
+    paired_classes: [ "JID_無し男", "JID_無し男" ]
+  - jid: JID_マスターロード女
+    gender: female
+    level: advanced
+    paired_classes: [ "JID_無し男", "JID_無し男" ]
+  - jid: JID_魔戦士男
+    gender: male
+    level: advanced
+    paired_classes: [ "JID_無し男", "JID_無し男" ]
+  - jid: JID_魔戦士女
+    gender: female
+    level: advanced
+    paired_classes: [ "JID_無し男", "JID_無し男" ]
+  - jid: JID_ダークペガサス男
+    gender: male
+    level: advanced
+    paired_classes: [ "JID_無し男", "JID_無し男" ]
+  - jid: JID_ダークペガサス女
+    gender: female
+    level: advanced
+    paired_classes: [ "JID_無し男", "JID_無し男" ]
+  - jid: JID_シューター男
+    gender: male
+    level: advanced
+    paired_classes: [ "JID_無し男", "JID_無し男" ]
+  - jid: JID_魔女女
+    gender: female
+    level: advanced
+    paired_classes: [ "JID_無し男", "JID_無し男" ]
+items:
+  Sword:
+    E:
+    - IID_青銅の剣
+    - IID_ワインボトル
+    - IID_青銅の刀
+    - IID_大根
+    - IID_追い剥ぎの刀
+    D:
+    - IID_鉄の剣
+    - IID_アーマーキラー
+    - IID_ドラゴンキラー
+    - IID_洋傘
+    - IID_暗夜の漆黒剣
+    - IID_鉄の刀
+    - IID_小太刀
+    - IID_斧斬りの刀
+    - IID_和傘
+    - IID_白夜の霞刀
+    C:
+    - IID_鋼の剣
+    - IID_キルソード
+    - IID_サンダーソード
+    - IID_ルーナの鋭剣
+    - IID_ラズワルドの舞剣
+    - IID_鋼の刀
+    - IID_逆刀
+    - IID_居合刀
+    - IID_霊刀
+    - IID_タクミの竹刀
+    - IID_カザハナの麗刀
+    - IID_マルスの模擬剣
+    - IID_アイクの模擬剣
+    - IID_ルキナの模擬剣
+    B:
+    - IID_銀の剣
+    - IID_レオンの冷剣
+    - IID_銀の刀
+    - IID_飛刀
+    - IID_ヒナタの猛刀
+    - IID_真ガングレリ
+    A:
+    - IID_勇者の剣
+    - IID_武者の刀
+    S:
+    - IID_葉隠
+  Lance:
+    E:
+    - IID_青銅の槍
+    - IID_ほうき
+    - IID_青銅の薙刀
+    - IID_竹竿
+    - IID_追い剥ぎの薙刀
+    D:
+    - IID_鉄の槍
+    - IID_手槍
+    - IID_ビーストキラー
+    - IID_小枝
+    - IID_ピエリの小槍
+    - IID_鉄の薙刀
+    - IID_剣薙ぎの薙刀
+    - IID_松の木
+    - IID_ツバキの金薙刀
+    C:
+    - IID_鋼の槍
+    - IID_キラーランス
+    - IID_聖なる槍
+    - IID_魔封じの槍
+    - IID_エルフィの大槍
+    - IID_鋼の薙刀
+    - IID_逆薙刀
+    - IID_守りの薙刀
+    - IID_神雷の薙刀
+    - IID_捨て身の薙刀
+    - IID_ヒノカの紅薙刀
+    B:
+    - IID_銀の槍
+    - IID_スレンドスピア
+    - IID_マークスの指南槍
+    - IID_銀の薙刀
+    - IID_オボロの漆薙刀
+    A:
+    - IID_勇者の槍
+    - IID_武者の薙刀
+    S:
+    - IID_水車
+  Axe:
+    E:
+    - IID_青銅の斧
+    - IID_フライパン
+    - IID_追い剥ぎの斧
+    - IID_青銅の金棒
+    - IID_鯉のぼり
+    D:
+    - IID_鉄の斧
+    - IID_手斧
+    - IID_ハンマー
+    - IID_獣の骨
+    - IID_鉄の金棒
+    - IID_投げ棒
+    - IID_槍砕きの金棒
+    - IID_クワ
+    - IID_リョウマの鍛錬棒
+    C:
+    - IID_鋼の斧
+    - IID_ボルトアクス
+    - IID_キラーアクス
+    - IID_狂戦士の斧
+    - IID_ベルカの殺斧
+    - IID_鋼の金棒
+    - IID_逆金棒
+    - IID_大金棒
+    - IID_金剛の金棒
+    - IID_リンカの鬼金棒
+    B:
+    - IID_銀の斧
+    - IID_トマホーク
+    - IID_銀の金棒
+    - IID_破城の投げ棒
+    - IID_フウガの疾風金棒
+    A:
+    - IID_勇者の斧
+    - IID_武者の金棒
+    S:
+    - IID_アウルゲルミル
+  HiddenWeapon:
+    E:
+    - IID_青銅の暗器
+    - IID_羽ペン
+    - IID_追い剥ぎナイフ
+    - IID_青銅の手裏剣
+    - IID_菜箸
+    D:
+    - IID_鉄の暗器
+    - IID_果物ナイフ
+    - IID_獣狩りの暗器
+    - IID_固いパン
+    - IID_祈りのロウソク
+    - IID_鉄の手裏剣
+    - IID_針手裏剣
+    - IID_カゲロウの眩惑針
+    C:
+    - IID_鋼の暗器
+    - IID_クリスナイフ
+    - IID_死を呼ぶナイフ
+    - IID_フェリシアの氷皿
+    - IID_鋼の手裏剣
+    - IID_逆手裏剣
+    - IID_暗殺手裏剣
+    - IID_爆炎手裏剣
+    - IID_スズカゼの疾風針
+    - IID_サイゾウの爆炎針
+    B:
+    - IID_銀の暗器
+    - IID_ジョーカーの食器
+    - IID_銀の手裏剣
+    - IID_撒菱
+    A:
+    - IID_強者の暗器
+    - IID_巧者の手裏剣
+    S:
+    - IID_朧
+  Bow:
+    E:
+    - IID_青銅の弓
+    - IID_ゴムの弓
+    - IID_キューピッドの弓
+    - IID_青銅の和弓
+    - IID_竹の和弓
+    - IID_追い剥ぎの和弓
+    D:
+    - IID_鉄の弓
+    - IID_ショートボウ
+    - IID_バイオリンの弓
+    - IID_鉄の和弓
+    - IID_琵琶の和弓
+    - IID_セツナの緩弓
+    C:
+    - IID_鋼の弓
+    - IID_キラーボウ
+    - IID_聖なる弓
+    - IID_シャイニングボウ
+    - IID_狩人の弓
+    - IID_ゼロの虐弓
+    - IID_鋼の和弓
+    - IID_逆和弓
+    - IID_明鏡の和弓
+    - IID_破魔矢
+    - IID_横撃ちの和弓
+    B:
+    - IID_銀の弓
+    - IID_アンナの福弓
+    - IID_銀の和弓
+    - IID_必中の和弓
+    - IID_ミコトの霊弓
+    A:
+    - IID_強者の弓
+    - IID_巧者の和弓
+    S:
+    - IID_残心
+  Tome:
+    E:
+    - IID_ファイアー
+    - IID_プチファイアー
+    - IID_ローバー
+    - IID_鼠神・子
+    - IID_紙
+    D:
+    - IID_サンダー
+    - IID_ムーンライト
+    - IID_牛神・丑
+    - IID_馬神・午
+    - IID_羊神・未
+    - IID_古びた書物
+    - IID_猿神・申
+    C:
+    - IID_フィンブル
+    - IID_ライトニング
+    - IID_ミョルニル
+    - IID_ブーストサンダー
+    - IID_オーディンの黒書
+    - IID_虎神・寅
+    - IID_逆神・丑寅
+    - IID_鳥神・酉
+    - IID_イザナの古呪
+    - IID_ルフレの写本
+    B:
+    - IID_ライナロック
+    - IID_マクベスの惑書
+    - IID_兎神・卯
+    - IID_虹の賢者の墨絵
+    A:
+    - IID_ユグドラシル
+    - IID_龍神・辰
+    - IID_蛇神・巳
+    S:
+    - IID_エクスカリバー
+  Staff:
+    E:
+    - IID_ライブ
+    - IID_お菓子の杖
+    - IID_キノコの杖
+    - IID_春祭
+    - IID_七難即滅
+    - IID_ちょうちん
+    - IID_サクラの小祓串
+    - IID_星竜の加護
+    D:
+    - IID_リライブ
+    - IID_フリーズ
+    - IID_花束の杖
+    - IID_夏祭
+    - IID_団子串
+    C:
+    - IID_リブロー
+    - IID_ウィークネス
+    - IID_エリーゼの幼杖
+    - IID_秋祭
+    - IID_神風招来
+    - IID_笹飾り
+    B:
+    - IID_リカバー
+    - IID_ドロー
+    - IID_リリスの星杖
+    - IID_冬祭
+    - IID_禍事罪穢
+    - IID_アサマの捻れ祓串
+    A:
+    - IID_リザーブ
+    - IID_大祭
+    S:
+    - IID_ビフレスト
+  Dragonstone:
+    E:
+    - IID_竜石
+    C:
+    - IID_真竜石
+  Beaststone:
+    E:
+    - IID_獣石
+    C:
+    - IID_守獣石
+    B:
+    - IID_超獣石
+treasures:
+  - IID_青銅の剣
+  - IID_鉄の剣
+  - IID_鋼の剣
+  - IID_銀の剣
+  - IID_勇者の剣
+  - IID_アーマーキラー
+  - IID_ドラゴンキラー
+  - IID_キルソード
+  - IID_サンダーソード
+  - IID_ワインボトル
+  - IID_洋傘
+  - IID_暗夜の漆黒剣
+  - IID_レオンの冷剣
+  - IID_ルーナの鋭剣
+  - IID_ラズワルドの舞剣
+  - IID_青銅の刀
+  - IID_鉄の刀
+  - IID_鋼の刀
+  - IID_銀の刀
+  - IID_武者の刀
+  - IID_小太刀
+  - IID_飛刀
+  - IID_斧斬りの刀
+  - IID_逆刀
+  - IID_居合刀
+  - IID_霊刀
+  - IID_葉隠
+  - IID_大根
+  - IID_和傘
+  - IID_追い剥ぎの刀
+  - IID_白夜の霞刀
+  - IID_タクミの竹刀
+  - IID_カザハナの麗刀
+  - IID_ヒナタの猛刀
+  - IID_青銅の槍
+  - IID_鉄の槍
+  - IID_鋼の槍
+  - IID_銀の槍
+  - IID_勇者の槍
+  - IID_手槍
+  - IID_スレンドスピア
+  - IID_ビーストキラー
+  - IID_キラーランス
+  - IID_聖なる槍
+  - IID_ほうき
+  - IID_小枝
+  - IID_魔封じの槍
+  - IID_マークスの指南槍
+  - IID_エルフィの大槍
+  - IID_ピエリの小槍
+  - IID_青銅の薙刀
+  - IID_鉄の薙刀
+  - IID_鋼の薙刀
+  - IID_銀の薙刀
+  - IID_武者の薙刀
+  - IID_剣薙ぎの薙刀
+  - IID_逆薙刀
+  - IID_守りの薙刀
+  - IID_神雷の薙刀
+  - IID_水車
+  - IID_竹竿
+  - IID_松の木
+  - IID_追い剥ぎの薙刀
+  - IID_捨て身の薙刀
+  - IID_ヒノカの紅薙刀
+  - IID_ツバキの金薙刀
+  - IID_オボロの漆薙刀
+  - IID_青銅の斧
+  - IID_鉄の斧
+  - IID_鋼の斧
+  - IID_銀の斧
+  - IID_勇者の斧
+  - IID_手斧
+  - IID_トマホーク
+  - IID_ハンマー
+  - IID_ボルトアクス
+  - IID_キラーアクス
+  - IID_アウルゲルミル
+  - IID_フライパン
+  - IID_獣の骨
+  - IID_追い剥ぎの斧
+  - IID_狂戦士の斧
+  - IID_ベルカの殺斧
+  - IID_青銅の金棒
+  - IID_鉄の金棒
+  - IID_鋼の金棒
+  - IID_銀の金棒
+  - IID_武者の金棒
+  - IID_投げ棒
+  - IID_破城の投げ棒
+  - IID_槍砕きの金棒
+  - IID_逆金棒
+  - IID_大金棒
+  - IID_鯉のぼり
+  - IID_クワ
+  - IID_金剛の金棒
+  - IID_リンカの鬼金棒
+  - IID_リョウマの鍛錬棒
+  - IID_フウガの疾風金棒
+  - IID_青銅の暗器
+  - IID_鉄の暗器
+  - IID_鋼の暗器
+  - IID_銀の暗器
+  - IID_強者の暗器
+  - IID_果物ナイフ
+  - IID_獣狩りの暗器
+  - IID_クリスナイフ
+  - IID_羽ペン
+  - IID_固いパン
+  - IID_追い剥ぎナイフ
+  - IID_祈りのロウソク
+  - IID_死を呼ぶナイフ
+  - IID_フェリシアの氷皿
+  - IID_ジョーカーの食器
+  - IID_青銅の手裏剣
+  - IID_鉄の手裏剣
+  - IID_鋼の手裏剣
+  - IID_銀の手裏剣
+  - IID_巧者の手裏剣
+  - IID_逆手裏剣
+  - IID_針手裏剣
+  - IID_暗殺手裏剣
+  - IID_爆炎手裏剣
+  - IID_朧
+  - IID_菜箸
+  - IID_撒菱
+  - IID_スズカゼの疾風針
+  - IID_サイゾウの爆炎針
+  - IID_カゲロウの眩惑針
+  - IID_青銅の弓
+  - IID_鉄の弓
+  - IID_鋼の弓
+  - IID_銀の弓
+  - IID_強者の弓
+  - IID_ショートボウ
+  - IID_キラーボウ
+  - IID_聖なる弓
+  - IID_シャイニングボウ
+  - IID_ゴムの弓
+  - IID_バイオリンの弓
+  - IID_キューピッドの弓
+  - IID_狩人の弓
+  - IID_アンナの福弓
+  - IID_ゼロの虐弓
+  - IID_青銅の和弓
+  - IID_鉄の和弓
+  - IID_鋼の和弓
+  - IID_銀の和弓
+  - IID_巧者の和弓
+  - IID_逆和弓
+  - IID_明鏡の和弓
+  - IID_必中の和弓
+  - IID_残心
+  - IID_竹の和弓
+  - IID_琵琶の和弓
+  - IID_追い剥ぎの和弓
+  - IID_破魔矢
+  - IID_横撃ちの和弓
+  - IID_ミコトの霊弓
+  - IID_セツナの緩弓
+  - IID_ファイアー
+  - IID_サンダー
+  - IID_フィンブル
+  - IID_ライナロック
+  - IID_ユグドラシル
+  - IID_ライトニング
+  - IID_ミョルニル
+  - IID_エクスカリバー
+  - IID_プチファイアー
+  - IID_ローバー
+  - IID_ブーストサンダー
+  - IID_ムーンライト
+  - IID_マクベスの惑書
+  - IID_オーディンの黒書
+  - IID_鼠神・子
+  - IID_牛神・丑
+  - IID_虎神・寅
+  - IID_兎神・卯
+  - IID_龍神・辰
+  - IID_逆神・丑寅
+  - IID_蛇神・巳
+  - IID_馬神・午
+  - IID_羊神・未
+  - IID_紙
+  - IID_古びた書物
+  - IID_猿神・申
+  - IID_鳥神・酉
+  - IID_虹の賢者の墨絵
+  - IID_イザナの古呪
+  - IID_ライブ
+  - IID_リライブ
+  - IID_リブロー
+  - IID_リカバー
+  - IID_リザーブ
+  - IID_フリーズ
+  - IID_ウィークネス
+  - IID_ドロー
+  - IID_ビフレスト
+  - IID_お菓子の杖
+  - IID_キノコの杖
+  - IID_花束の杖
+  - IID_エリーゼの幼杖
+  - IID_リリスの星杖
+  - IID_春祭
+  - IID_夏祭
+  - IID_秋祭
+  - IID_冬祭
+  - IID_大祭
+  - IID_七難即滅
+  - IID_神風招来
+  - IID_禍事罪穢
+  - IID_ちょうちん
+  - IID_団子串
+  - IID_笹飾り
+  - IID_サクラの小祓串
+  - IID_アサマの捻れ祓串
+  - IID_竜石
+  - IID_真竜石
+  - IID_獣石
+  - IID_守獣石
+  - IID_超獣石
+  - IID_星竜の加護
+  - IID_傷薬
+  - IID_調合薬
+  - IID_特効薬
+  - IID_HPの薬
+  - IID_力の薬
+  - IID_魔力の薬
+  - IID_技の薬
+  - IID_速さの薬
+  - IID_幸運の薬
+  - IID_守備の薬
+  - IID_魔防の薬
+  - IID_アクアの秘薬
+  - IID_ギュンターの良薬
+  - IID_グレイの創作菓子
+  - IID_虹の秘薬
+  - IID_絆の種
+  - IID_ハープ
+  - IID_ほら貝
+  - IID_扉の鍵
+  - IID_宝の鍵
+  - IID_万能鍵
+  - IID_天使の衣
+  - IID_力のしずく
+  - IID_精霊の粉
+  - IID_秘伝の書
+  - IID_はやての羽
+  - IID_女神の像
+  - IID_竜の盾
+  - IID_魔よけ
+  - IID_神竜草
+  - IID_ブーツ
+  - IID_術書
+  - IID_マスタープルフ
+  - IID_パラレルプルフ
+  - IID_マリッジプルフ
+  - IID_バディプルフ
+  - IID_エターナルプルフ
+  - IID_魔戦士の巻物
+  - IID_黒天馬の翼
+  - IID_真ガングレリ
+  - IID_小判
+  - IID_戦闘王の紋章
+  - IID_訪問王の紋章
+  - IID_チャイルドプルフ
+  - IID_シューター砲台
+  - IID_魔女の魔法陣
+  - IID_エリートの書
+  - IID_鎧盾の書
+  - IID_獣盾の書
+  - IID_翼盾の書
+  - IID_近接射撃の書
+  - IID_攻防一体の陣の書
+  - IID_力の吸収の書
+  - IID_魔力の吸収の書
+  - IID_技の吸収の書
+  - IID_速さの吸収の書
+  - IID_幸運の吸収の書
+  - IID_守備の吸収の書
+  - IID_魔防の吸収の書
+  - IID_絆の王の紋章
+  - IID_神剣ファルシオン
+  - IID_神剣ラグネル
+  - IID_裏剣ファルシオン
+  - IID_雷書トロン
+  - IID_マルスの模擬剣
+  - IID_アイクの模擬剣
+  - IID_ルキナの模擬剣
+  - IID_ルフレの写本
+  - IID_1000G
+  - IID_2000G
+  - IID_3000G
+  - IID_5000G
+  - IID_7000G
+  - IID_10000G
+  - IID_20000G
+personal_skills:
+  - SEID_不思議な魅力
+  - SEID_絶対進攻
+  - SEID_絶対援護
+  - SEID_絶対死守
+  - SEID_炎の血
+  - SEID_絆の祈り
+  - SEID_癒しの声
+  - SEID_小さな声援
+  - SEID_お転婆
+  - SEID_完璧主義
+  - SEID_友情の誓い
+  - SEID_爆炎使い
+  - SEID_白夜の捕縛術
+  - SEID_叱咤激励
+  - SEID_天罰
+  - SEID_ぼんやり
+  - SEID_尊大
+  - SEID_暗夜嫌い
+  - SEID_悪あがき
+  - SEID_対抗意識
+  - SEID_忍法車返し
+  - SEID_勝者の愉悦
+  - SEID_恩返し
+  - SEID_武士道
+  - SEID_勝利への執念
+  - SEID_ダーティファイト
+  - SEID_可憐な花
+  - SEID_不運の塊
+  - SEID_怪力
+  - SEID_血の疼き
+  - SEID_暗夜の拘束術
+  - SEID_呪詛返し
+  - SEID_妖艶な花
+  - SEID_負けん気
+  - SEID_奇襲任務
+  - SEID_蒼の踊り
+  - SEID_殺戮本能
+  - SEID_強面
+  - SEID_女の本性
+  - SEID_冷血
+  - SEID_拾いもの
+  - SEID_騎士道
+  - SEID_美しき王
+  - SEID_風の血
+  - SEID_軍略伝授
+  - SEID_氷の血
+  - SEID_農地の主
+  - SEID_竜の御子
+  - SEID_執事の嗜み
+  - SEID_チューニング
+  - SEID_おっちょこちょい
+  - SEID_幸運のおまじない
+  - SEID_大義の勇
+  - SEID_前向き
+  - SEID_甘党
+  - SEID_じゃれつき
+  - SEID_冷静沈着
+  - SEID_五・七・五
+  - SEID_天才肌
+  - SEID_執念
+  - SEID_レディーファースト
+  - SEID_臆病
+  - SEID_だまし討ち
+  - SEID_ひろい食い
+  - SEID_強運の塊
+  - SEID_乙女心の躍動
+  - SEID_女の子好き
+  - SEID_邪な空想
+  - SEID_一攫千金
+global_chapters:
+  - CID_A000
+  - CID_A001
+  - CID_A002
+  - CID_A003
+  - CID_A004
+  - CID_A005
+  - CID_P006
+  - CID_M001
+  - CID_M002
+  - CID_M003
+  - CID_M004
+  - CID_X001
+  - CID_X002
+  - CID_X003
+  - CID_X004
+  - CID_X005
+  - CID_X006
+  - CID_X007
+  - CID_X008
+  - CID_X009
+  - CID_X010
+  - CID_X011
+  - CID_X012
+  - CID_X013
+  - CID_X014
+  - CID_X015
+  - CID_X016
+  - CID_X017
+  - CID_X018
+  - CID_X019
+  - CID_X020
+  - CID_X021
+  - CID_X022
+route_chapters:
+  Birthright:
+    - CID_A006
+    - CID_A007
+    - CID_A008
+    - CID_A009
+    - CID_A010
+    - CID_A011
+    - CID_A012
+    - CID_A013
+    - CID_A014
+    - CID_A015
+    - CID_A016
+    - CID_A017
+    - CID_A018
+    - CID_A019
+    - CID_A020
+    - CID_A021
+    - CID_A022
+    - CID_A023
+    - CID_A024
+    - CID_A025
+    - CID_A026
+    - CID_A027
+    - CID_A028
+  Conquest:
+    - CID_B006
+    - CID_B007
+    - CID_B008
+    - CID_B009
+    - CID_B010
+    - CID_B011
+    - CID_B012
+    - CID_B013
+    - CID_B014
+    - CID_B015
+    - CID_B016
+    - CID_B017
+    - CID_B018
+    - CID_B019
+    - CID_B020
+    - CID_B021
+    - CID_B022
+    - CID_B023
+    - CID_B024
+    - CID_B025
+    - CID_B026
+    - CID_B027
+    - CID_B028
+  Revelation:
+    - CID_C006
+    - CID_C007
+    - CID_C008
+    - CID_C009
+    - CID_C010
+    - CID_C011
+    - CID_C012
+    - CID_C013
+    - CID_C014
+    - CID_C015
+    - CID_C016
+    - CID_C017
+    - CID_C018
+    - CID_C019
+    - CID_C020
+    - CID_C021
+    - CID_C022
+    - CID_C023
+    - CID_C024
+    - CID_C025
+    - CID_C026
+    - CID_C027
+    - CID_C028

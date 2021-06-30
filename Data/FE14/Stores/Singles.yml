@@ -1,0 +1,9 @@
+---
+- id: gamedata
+  type: single
+  filename: GameData/GameData.bin.lz
+  typename: GameDataFile
+- id: castle_join
+  type: single
+  filename: castle/castle_join.bin.lz
+  typename: CastleJoinFile

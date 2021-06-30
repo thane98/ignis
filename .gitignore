@@ -1,0 +1,8 @@
+/target
+/.idea
+/venv
+*.iml
+ignis.log
+Cargo.lock
+*.pyc
+*.pyd

@@ -1,0 +1,19 @@
+[package]
+name = "ignis"
+version = "0.1.0"
+authors = ["thane98"]
+edition = "2018"
+
+[lib]
+name = "ignis"
+crate-type = ["cdylib"]
+
+[dependencies.pyo3]
+version = "0.11.1"
+features = ["extension-module"]
+
+[dependencies]
+paragon = { path = "../paragon" }
+exalt = { git = "https://github.com/thane98/exalt-rs" }
+rand = "0.8.4"
+rand_pcg = "0.3.1"

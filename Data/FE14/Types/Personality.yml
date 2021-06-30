@@ -1,0 +1,61 @@
+---
+PersonalityTable:
+  node:
+    id: personality
+    name: Personality
+  size: 0
+  fields:
+    - id: entries
+      type: list
+      typename: Personality
+      table: personality
+      format:
+        type: indirect
+        index: -2
+        offset: 0x20
+        format: u32      
+
+Personality:
+  size: 64
+  key: name
+  display: name
+  index: id
+  fields:
+    - id: id
+      type: int
+      format: i32
+    - id: name
+      type: message
+      paths: [m/GameData.bin.lz]
+    - id: mid_h
+      type: string
+    - id: boon_bases
+      type: bytes
+      length: 8
+    - id: boon_growths
+      type: bytes
+      length: 8
+    - id: boon_modifiers
+      type: bytes
+      length: 8
+    - id: bane_bases
+      type: bytes
+      length: 8
+    - id: bane_growths
+      type: bytes
+      length: 8
+    - id: bane_modifiers
+      type: bytes
+      length: 8
+    - id: unknown_support
+      type: int
+      format: i8
+    - id: unknown_pair_up_1
+      type: int
+      format: i8
+    - id: unknown_pair_up_2
+      type: int
+      format: i8
+    - id: unknown_pair_up_3
+      type: int
+      format: i8
