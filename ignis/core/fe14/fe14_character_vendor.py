@@ -65,7 +65,6 @@ class FE14CharactersVendor:
         # Update class levels based on what's in the ROM
         for c in characters:
             rid = self.pid_to_rid[c.pid]
-            print(gd.display(rid))
             primary_class = gd.rid(rid, "class_1")
             c.class_level = classes.get_class_level(primary_class)
 
