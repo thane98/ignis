@@ -13,6 +13,14 @@ Compared to the original, Ignis has several advantages:
     * DotNet3dsToolkit: [https://github.com/evandixon/DotNet3dsToolkit](https://github.com/evandixon/DotNet3dsToolkit)
     * Ninfs: [https://github.com/ihaveamac/ninfs](https://github.com/ihaveamac/ninfs)
     * (Command Line) CTRTool: [https://github.com/3DSGuy/Project_CTR/releases/tag/ctrtool-v0.7](https://github.com/3DSGuy/Project_CTR/releases/tag/ctrtool-v0.7)
+ 2. Create a directory for the outputs (can either put your mods like Gay Fates in there or leave it empty). This is where your randomized files will go.
+ 3. Open Ignis and select your extracted romfs folder (step 1) and output folder (step 2).
+ 4. Select the ROM language.
+    * For Japanese versions of the game, this must be Japanese.
+    * For NA versions of the game, this must be EnglishNA.
+    * For EU versions of the game, anything but Japanese or EnglishNA. If you want English text, you **must** select EnglishEU, **not** EnglishNA.
+ 5. Select whatever options you want and click randomize.
+ 6. You will get a popup when the randomizer is done. Copy the outputs to either your mods folder (Citra) or layered fs folder (Luma) and start the game.
     
 ## Building
 The build process is identical to [Paragon](https://github.com/thane98/paragon).
