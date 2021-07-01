@@ -65,6 +65,7 @@ class FE14CharactersVendor:
         # Update class levels based on what's in the ROM
         for c in characters:
             rid = self.pid_to_rid[c.pid]
+            print(gd.display(rid))
             primary_class = gd.rid(rid, "class_1")
             c.class_level = classes.get_class_level(primary_class)
 
@@ -211,4 +212,4 @@ class FE14CharactersVendor:
             return False
         if not user_config.randomize_children and c.generation == 2:
             return False
-        return True
+        return bool(len(set(user_config.routes).intersection(c.routes)))

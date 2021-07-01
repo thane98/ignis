@@ -1,6 +1,5 @@
 from ignis.core.fe14 import fe14_utils
 from ignis.core.randomization_step import RandomizationStep
-from ignis.model.weapon_rank import WeaponRank
 
 _DIVINE_WEAPONS = {
     "IID_雷神刀",

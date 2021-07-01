@@ -18,6 +18,11 @@ class UpdateCastleJoinStep(RandomizationStep):
         if user_config.add_anna_to_castle_join and not gd.key_to_rid(
             "castlejoin", "PID_アンナ"
         ):
+            # Sanity check: Is Anna in the character pool?
+            if not characters.to_rid("PID_アンナ"):
+                return
+
+            # Okay, now we can add her.
             rid = gd.list_add(table_rid, table_field_id)
             gd.set_rid(rid, "character", characters.to_rid("PID_アンナ"))
             gd.set_rid(rid, "birthright_chapter", chapters.to_rid("CID_A007"))

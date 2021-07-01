@@ -5,371 +5,444 @@ characters:
     gender: male
     class_level: advanced
     generation: 1
+    routes: [ "Conquest", "Revelation" ]
   - pid: PID_フェリシア
     voice_set: FELICIA
     gender: female
     class_level: advanced
     generation: 1
+    routes: [ "Birthright", "Conquest", "Revelation" ]
   - pid: PID_ジョーカー
     voice_set: JOKER
     gender: male
     class_level: advanced
     generation: 1
+    routes: [ "Birthright", "Conquest", "Revelation" ]
   - pid: PID_リンカ
     voice_set: RINKA
     gender: female
     class_level: base
     generation: 1
+    routes: [ "Birthright", "Revelation" ]
   - pid: PID_スズカゼ
     voice_set: SUZUKAZE
     gender: male
     class_level: base
     generation: 1
+    routes: [ "Birthright", "Conquest", "Revelation" ]
   - pid: PID_サクラ
     voice_set: SAKURA
     gender: female
     class_level: base
     generation: 1
+    routes: [ "Birthright", "Revelation" ]
   - pid: PID_アクア
     voice_set: AQUA
     gender: female
     class_level: base
     generation: 1
+    routes: [ "Birthright", "Conquest", "Revelation" ]
   - pid: PID_カザハナ
     voice_set: KAZAHANA
     gender: female
     class_level: base
     generation: 1
+    routes: [ "Birthright", "Revelation" ]
   - pid: PID_ツバキ
     voice_set: TSUBAKI
     gender: male
     class_level: base
     generation: 1
+    routes: [ "Birthright", "Revelation" ]
   - pid: PID_サイラス
     voice_set: SILAS
     gender: male
     class_level: base
     generation: 1
+    routes: [ "Birthright", "Conquest", "Revelation" ]
   - pid: PID_サイゾウ
     voice_set: SAIZOU
     gender: male
     class_level: base
     generation: 1
+    routes: [ "Birthright", "Revelation" ]
   - pid: PID_オロチ
     voice_set: OROCHI
     gender: female
     class_level: base
     generation: 1
+    routes: [ "Birthright", "Revelation" ]
   - pid: PID_ヒノカ
     voice_set: HINOKA
     gender: female
     class_level: base
     generation: 1
+    routes: [ "Birthright", "Revelation" ]
   - pid: PID_アサマ
     voice_set: ASAMA
     gender: male
     class_level: base
     generation: 1
+    routes: [ "Birthright", "Revelation" ]
   - pid: PID_セツナ
     voice_set: SETSUNA
     gender: female
     class_level: base
     generation: 1
+    routes: [ "Birthright", "Revelation" ]
   - pid: PID_ツクヨミ
     voice_set: TSUKUYOMI
     gender: male
     class_level: base
     generation: 1
+    routes: [ "Birthright", "Revelation" ]
   - pid: PID_オボロ
     voice_set: OBORO
     gender: female
     class_level: base
     generation: 1
+    routes: [ "Birthright", "Revelation" ]
   - pid: PID_ヒナタ
     voice_set: HINATA
     gender: male
     class_level: base
     generation: 1
+    routes: [ "Birthright", "Revelation" ]
   - pid: PID_タクミ
     voice_set: TAKUMI
     gender: male
     class_level: base
     generation: 1
+    routes: [ "Birthright", "Revelation" ]
   - pid: PID_カゲロウ
     voice_set: KAGEROU
     gender: female
     class_level: base
     generation: 1
+    routes: [ "Birthright", "Revelation" ]
   - pid: PID_ユウギリ
     voice_set: YUUGIRI
     gender: female
     class_level: advanced
     generation: 1
+    routes: [ "Birthright", "Revelation" ]
   - pid: PID_ニシキ
     voice_set: NISHIKI
     gender: male
     class_level: base
     generation: 1
+    routes: [ "Birthright", "Revelation" ]
   - pid: PID_リョウマ
     voice_set: RYOUMA
     gender: male
     class_level: advanced
     generation: 1
+    routes: [ "Birthright", "Revelation" ]
   - pid: PID_クリムゾン
     voice_set: CRIMSON
     gender: female
     class_level: advanced
     generation: 1
+    routes: [ "Birthright", "Revelation" ]
   - pid: PID_アシュラ
     voice_set: ASYURA
     gender: male
     class_level: advanced
     generation: 1
+    routes: [ "Birthright", "Conquest", "Revelation" ]
   - pid: PID_エリーゼ
     voice_set: ELISE
     gender: female
     class_level: base
     generation: 1
+    routes: [ "Conquest", "Revelation" ]
   - pid: PID_ハロルド
     voice_set: HAROLD
     gender: male
     class_level: base
     generation: 1
+    routes: [ "Conquest", "Revelation" ]
   - pid: PID_エルフィ
     voice_set: ELFI
     gender: female
     class_level: base
     generation: 1
+    routes: [ "Conquest", "Revelation" ]
   - pid: PID_オーディン
     voice_set: ODIN
     gender: male
     class_level: base
     generation: 1
+    routes: [ "Conquest", "Revelation" ]
   - pid: PID_ゼロ
     voice_set: ZERO
     gender: male
     class_level: base
     generation: 1
+    routes: [ "Conquest", "Revelation" ]
   - pid: PID_ニュクス
     voice_set: NYX
     gender: female
     class_level: base
     generation: 1
+    routes: [ "Conquest", "Revelation" ]
   - pid: PID_カミラ
     voice_set: CAMILLA
     gender: female
     class_level: advanced
     generation: 1
+    routes: [ "Conquest", "Revelation" ]
   - pid: PID_ルーナ
     voice_set: LUNA
     gender: female
     class_level: base
     generation: 1
+    routes: [ "Conquest", "Revelation" ]
   - pid: PID_ベルカ
     voice_set: BERKA
     gender: female
     class_level: base
     generation: 1
+    routes: [ "Conquest", "Revelation" ]
   - pid: PID_ラズワルド
     voice_set: LAZWARD
     gender: male
     class_level: base
     generation: 1
+    routes: [ "Conquest", "Revelation" ]
   - pid: PID_ピエリ
     voice_set: PIERI
     gender: female
     class_level: base
     generation: 1
+    routes: [ "Conquest", "Revelation" ]
   - pid: PID_ブノワ
     voice_set: BENOIT
     gender: male
     class_level: base
     generation: 1
+    routes: [ "Conquest", "Revelation" ]
   - pid: PID_シャーロッテ
     voice_set: CHARLOTTE
     gender: female
     class_level: base
     generation: 1
+    routes: [ "Conquest", "Revelation" ]
   - pid: PID_レオン
     voice_set: LEON
     gender: male
     class_level: advanced
     generation: 1
+    routes: [ "Conquest", "Revelation" ]
   - pid: PID_フランネル
     voice_set: FLANNEL
     gender: male
     class_level: base
     generation: 1
+    routes: [ "Conquest", "Revelation" ]
   - pid: PID_マークス
     voice_set: MARKS
     gender: male
     class_level: advanced
     generation: 1
+    routes: [ "Conquest", "Revelation" ]
   - pid: PID_イザナ
     voice_set: IZANA
     gender: male
     class_level: advanced
     generation: 1
+    routes: [ "Birthright", "Conquest" ]
   - pid: PID_フウガ
     voice_set: FUUGA
     gender: male
     class_level: advanced
     generation: 1
+    routes: [ "Revelation" ]
   - pid: PID_ユキムラ
     voice_set: YUKIMURA
     gender: male
     class_level: advanced
     generation: 1
+    routes: [ "Birthright" ]
   - pid: PID_フローラ
     voice_set: FLORA
     gender: female
     class_level: advanced
     generation: 1
+    routes: [ "Conquest", "Revelation" ]
   - pid: PID_モズメ
     voice_set: MOZUME
     gender: female
     class_level: base
     generation: 1
+    routes: [ "Birthright", "Conquest", "Revelation" ]
   - pid: PID_カンナ男
     voice_set: KANNA_M
     gender: male
     class_level: base
     generation: 2
+    routes: [ "Birthright", "Conquest", "Revelation" ]
   - pid: PID_カンナ女
     voice_set: KANNA_F
     gender: female
     class_level: base
     generation: 2
+    routes: [ "Birthright", "Conquest", "Revelation" ]
   - pid: PID_シグレ
     voice_set: SHIGURE
     gender: male
     class_level: base
     generation: 2
+    routes: [ "Birthright", "Conquest", "Revelation" ]
   - pid: PID_ディーア
     voice_set: DEERE
     gender: male
     class_level: base
     generation: 2
+    routes: [ "Birthright", "Conquest", "Revelation" ]
   - pid: PID_ゾフィー
     voice_set: SOPHIE
     gender: female
     class_level: base
     generation: 2
+    routes: [ "Birthright", "Conquest", "Revelation" ]
   - pid: PID_ミドリコ
     voice_set: MIDORIKO
     gender: female
     class_level: base
     generation: 2
+    routes: [ "Birthright", "Conquest", "Revelation" ]
   - pid: PID_シノノメ
     voice_set: SHINONOME
     gender: male
     class_level: base
     generation: 2
+    routes: [ "Birthright", "Revelation" ]
   - pid: PID_キサラギ
     voice_set: KISARAGI
     gender: male
     class_level: base
     generation: 2
+    routes: [ "Birthright", "Revelation" ]
   - pid: PID_グレイ
     voice_set: GUREI
     gender: male
     class_level: base
     generation: 2
+    routes: [ "Birthright", "Revelation" ]
   - pid: PID_キヌ
     voice_set: KINU
     gender: female
     class_level: base
     generation: 2
+    routes: [ "Birthright", "Revelation" ]
   - pid: PID_ヒサメ
     voice_set: HISAME
     gender: male
     class_level: base
     generation: 2
+    routes: [ "Birthright", "Revelation" ]
   - pid: PID_ミタマ
     voice_set: MITAMA
     gender: female
     class_level: base
     generation: 2
+    routes: [ "Birthright", "Revelation" ]
   - pid: PID_マトイ
     voice_set: MATOI
     gender: female
     class_level: base
     generation: 2
+    routes: [ "Birthright", "Revelation" ]
   - pid: PID_シャラ
     voice_set: SYALLA
     gender: female
     class_level: base
     generation: 2
+    routes: [ "Birthright", "Revelation" ]
   - pid: PID_ジークベルト
     voice_set: SIEGBERT
     gender: male
     class_level: base
     generation: 2
+    routes: [ "Conquest", "Revelation" ]
   - pid: PID_フォレオ
     voice_set: FOLEO
     gender: male
     class_level: base
     generation: 2
+    routes: [ "Conquest", "Revelation" ]
   - pid: PID_イグニス
     voice_set: IGNIS
     gender: male
     class_level: base
     generation: 2
+    routes: [ "Conquest", "Revelation" ]
   - pid: PID_ベロア
     voice_set: VELOUR
     gender: female
     class_level: base
     generation: 2
+    routes: [ "Conquest", "Revelation" ]
   - pid: PID_ルッツ
     voice_set: LUTZ
     gender: male
     class_level: base
     generation: 2
+    routes: [ "Conquest", "Revelation" ]
   - pid: PID_オフェリア
     voice_set: OPHELIA
     gender: female
     class_level: base
     generation: 2
+    routes: [ "Conquest", "Revelation" ]
   - pid: PID_ソレイユ
     voice_set: SOLEIL
     gender: female
     class_level: base
     generation: 2
+    routes: [ "Conquest", "Revelation" ]
   - pid: PID_エポニーヌ
     voice_set: EPONINE
     gender: female
     class_level: base
     generation: 2
+    routes: [ "Conquest", "Revelation" ]
   - pid: PID_アンナ
     voice_set: ANNA
     gender: female
     class_level: base
     generation: 1
     flags: [ "anna" ]
+    routes: [ "Birthright", "Conquest", "Revelation" ]
   - pid: PID_マルス
     voice_set: MARTH
     gender: male
     class_level: base
     generation: 1
     flags: [ "amiibo" ]
+    routes: [ "Birthright", "Conquest", "Revelation" ]
   - pid: PID_アイク
     voice_set: IKE
     gender: male
     class_level: base
     generation: 1
     flags: [ "amiibo" ]
+    routes: [ "Birthright", "Conquest", "Revelation" ]
   - pid: PID_ルキナ
     voice_set: LUCINA
     gender: female
     class_level: base
     generation: 1
     flags: [ "amiibo" ]
+    routes: [ "Birthright", "Conquest", "Revelation" ]
   - pid: PID_ルフレ
     voice_set: REFLET
     gender: male
     class_level: base
     generation: 1
     flags: [ "amiibo" ]
+    routes: [ "Birthright", "Conquest", "Revelation" ]
 classes:
   - jid: JID_ダークブラッド男
     gender: male
