@@ -48,7 +48,11 @@ class FE14DisposRandomizationStep(RandomizationStep):
     @staticmethod
     def randomize_spawn(gd, characters, items, spawn):
         dirty = False
+        
         pid = gd.string(spawn, "pid")
+        if pid == "PID_A001_ボス":
+            return dirty
+
         if char := characters.get_global_character(pid):
             i = 0
             added_weapon = False

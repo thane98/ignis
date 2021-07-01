@@ -48,6 +48,18 @@ class FE14PersonRandomizationStep(RandomizationStep):
         aid = gd.string(replacement_rid, "aid")
 
         # Randomize them
+        if user_config.randomize_join_order:
+            dirty = True
+            fe14_utils.apply_randomized_bitflags(
+                gd, characters, aid, rid, replacement_rid
+            )
+            fe14_utils.morph_character(gd, replacement_rid, rid)
+
+        # Randomizing some character classes/stats can lead to soft locks.
+        # Chapter 1 is the biggest issue since MU can get one shot by certain classes.
+        if gd.key(rid) == "PID_A001_ボス":
+            return dirty
+
         if user_config.randomize_skills and gd.rid(rid, "personal_skill_normal"):
             dirty = True
             fe14_utils.apply_randomized_skills(gd, characters, aid, rid)
@@ -56,12 +68,6 @@ class FE14PersonRandomizationStep(RandomizationStep):
             # TODO: Just copy weapon ranks from global character to the new one?
             #       This avoids edge cases with weapon reassignment
             fe14_utils.apply_randomized_class_set(gd, characters, aid, rid, rid, rand)
-        if user_config.randomize_join_order:
-            dirty = True
-            fe14_utils.apply_randomized_bitflags(
-                gd, characters, aid, rid, replacement_rid
-            )
-            fe14_utils.morph_character(gd, replacement_rid, rid)
         if user_config.stat_randomization_algorithm != StatRandomizationAlgorithm.NONE:
             dirty = True
             stat_strategy = stat_randomization_strategy.from_algorithm(

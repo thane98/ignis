@@ -13,7 +13,7 @@ version = "0.11.1"
 features = ["extension-module"]
 
 [dependencies]
-paragon = { git = "https://github.com/thane98/paragon", rev = "c1df5ad" }
+paragon = { git = "https://github.com/thane98/paragon", rev = "3238c24" }
 exalt = { git = "https://github.com/thane98/exalt-rs", rev = "5620a09" }
 rand = "0.8.4"
 rand_pcg = "0.3.1"
