@@ -47,7 +47,7 @@ class FE14UserConfigForm(Ui_FE14UserConfigForm):
         routes = []
         if self.birthright_check_box.isChecked():
             routes.append(FE14Route.BIRTHRIGHT)
-        if self.revelation_check_box.isChecked():
+        if self.conquest_check_box.isChecked():
             routes.append(FE14Route.CONQUEST)
         if self.revelation_check_box.isChecked():
             routes.append(FE14Route.REVELATION)
