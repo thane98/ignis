@@ -1,7 +1,10 @@
 /target
 /.idea
 /venv
+/dist
+/build
 *.iml
+ignis.spec
 ignis.log
 Cargo.lock
 *.pyc
