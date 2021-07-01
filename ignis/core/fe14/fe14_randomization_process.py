@@ -25,6 +25,7 @@ from ignis.core.fe14.step.fe14_update_paralogue_unlocks_step import (
 )
 from ignis.core.fe14.step.fe14_update_scripts_step import FE14UpdateScriptsStep
 from ignis.core.fe14.step.handover_randomization_step import HandoverRandomizationStep
+from ignis.core.fe14.step.leo_a001_model_replacement_step import LeoA001ModelReplacementStep
 from ignis.core.fe14.step.unlock_hero_battles_step import UnlockHeroBattlesStep
 from ignis.core.fe14.step.update_castle_join_step import UpdateCastleJoinStep
 from ignis.core.step.generate_report_step import GenerateReportStep
@@ -87,6 +88,7 @@ class FE14RandomizationProcess(RandomizationProcess):
             HandoverRandomizationStep(),
             UnlockHeroBattlesStep(),
             UpdateCastleJoinStep(),
+            LeoA001ModelReplacementStep(),
             SaveGameDataStep(),
             GenerateReportStep(),
         ]

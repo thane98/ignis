@@ -1,0 +1,16 @@
+---
+- id: rom3
+  node:
+    id: rom3
+    name: ROM3 Assets
+  type: asset
+  filename: asset/ROM3.lz
+  typename: AssetTable
+- id: rom4
+  node:
+    id: rom4
+    name: ROM4 Assets
+  type: asset
+  filename: asset/ROM4.lz
+  typename: AssetTable
+ 
