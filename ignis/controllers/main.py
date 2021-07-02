@@ -4,13 +4,13 @@ import sys
 
 from ignis.controllers.main_window import MainWindow
 from ignis.model.configs import Configs
-from ignis.utils import theme_utils, dialog_utils
+from ignis.utils import theme_utils
 
 faulthandler.enable(all_threads=True)
 
 logging.basicConfig(
     handlers=[
-        logging.FileHandler("../ignis.log", "w", "utf-8"),
+        logging.FileHandler("ignis.log", "w", "utf-8"),
         logging.StreamHandler(sys.stdout),
     ]
 )

@@ -6,7 +6,7 @@ from ignis.model.stat_randomization_algorithm import StatRandomizationAlgorithm
 
 
 class RedistributeStatsStrategy:
-    PASSES = 200
+    PASSES = 20
 
     @staticmethod
     def randomize_stats(

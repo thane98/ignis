@@ -54,6 +54,7 @@ class FE14DisposRandomizationStep(RandomizationStep):
 
         if replacement_pid := characters.get_replacement(pid):
             gd.set_string(spawn, "pid", replacement_pid)
+            pid = replacement_pid
 
         if char := characters.get_global_character(pid):
             i = 0
