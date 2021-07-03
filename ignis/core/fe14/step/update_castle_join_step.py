@@ -23,8 +23,6 @@ class UpdateCastleJoinStep(RandomizationStep):
         if not has_marker and user_config.add_anna_to_castle_join and not gd.key_to_rid(
             "castlejoin", "PID_アンナ"
         ):
-            print("Tmp")
-
             # Sanity check: Is Anna in the character pool?
             if not characters.to_rid("PID_アンナ"):
                 return
