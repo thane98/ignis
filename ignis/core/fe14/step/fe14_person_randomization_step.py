@@ -8,6 +8,9 @@ from ignis.model.fe14_route import FE14Route
 from ignis.core.randomization_step import RandomizationStep
 
 
+_BANNED_PIDS = {"PID_A001_ボス", "PID_A005_リョウマ"}
+
+
 class FE14PersonRandomizationStep(RandomizationStep):
     def should_run(self, user_config) -> bool:
         return user_config.randomize_join_order
@@ -57,7 +60,7 @@ class FE14PersonRandomizationStep(RandomizationStep):
 
         # Randomizing some character classes/stats can lead to soft locks.
         # Chapter 1 is the biggest issue since MU can get one shot by certain classes.
-        if gd.key(rid) == "PID_A001_ボス":
+        if gd.key(rid) in _BANNED_PIDS:
             return dirty
 
         if user_config.randomize_skills and gd.rid(rid, "personal_skill_normal"):

@@ -12,6 +12,8 @@ _DIVINE_WEAPONS = {
 
 _ITEM_FIELDS = ["item_1", "item_2", "item_3", "item_4", "item_5"]
 
+_BANNED_PIDS = {"PID_A001_ボス", "PID_A005_リョウマ"}
+
 
 class FE14DisposRandomizationStep(RandomizationStep):
     def should_run(self, user_config) -> bool:
@@ -49,7 +51,7 @@ class FE14DisposRandomizationStep(RandomizationStep):
         dirty = False
 
         pid = gd.string(spawn, "pid")
-        if pid == "PID_A001_ボス":
+        if pid in _BANNED_PIDS:
             return dirty
 
         if replacement_pid := characters.get_replacement(pid):

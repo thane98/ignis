@@ -5,6 +5,8 @@ CastleJoinFile:
     name: Castle Join / Recruitment
   size: 4
   fields:
+    - id: randomizer_marker
+      type: label
     - id: count
       type: int
       skip_write: true

@@ -2,6 +2,8 @@ from ignis.core.randomization_step import RandomizationStep
 
 
 class UpdateCastleJoinStep(RandomizationStep):
+    RANDOMIZER_MARKER = "IGNIS_RANDOMIZER_MARKER"
+
     def should_run(self, user_config) -> bool:
         return user_config.randomize_join_order or user_config.add_anna_to_castle_join
 
@@ -14,10 +16,15 @@ class UpdateCastleJoinStep(RandomizationStep):
 
         table_rid, table_field_id = gd.table("castlejoin")
 
+        node = gd.node("castle_join")
+        has_marker = bool(gd.string(node.rid, "randomizer_marker") == UpdateCastleJoinStep.RANDOMIZER_MARKER)
+
         # Add Anna to castle join if necessary
-        if user_config.add_anna_to_castle_join and not gd.key_to_rid(
+        if not has_marker and user_config.add_anna_to_castle_join and not gd.key_to_rid(
             "castlejoin", "PID_アンナ"
         ):
+            print("Tmp")
+
             # Sanity check: Is Anna in the character pool?
             if not characters.to_rid("PID_アンナ"):
                 return
@@ -31,6 +38,8 @@ class UpdateCastleJoinStep(RandomizationStep):
             gd.set_int(rid, "required_building_1", -1)
             gd.set_int(rid, "required_building_2", -1)
             gd.set_int(rid, "required_building_3", -1)
+
+            gd.set_string(node.rid, "randomizer_marker", UpdateCastleJoinStep.RANDOMIZER_MARKER)
 
         # Apply swaps
         for rid in gd.items(table_rid, table_field_id):
