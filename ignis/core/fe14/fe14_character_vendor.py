@@ -104,6 +104,12 @@ class FE14CharactersVendor:
             return self.to_rid(pid)
         if pid in self.character_aliases:
             return self.to_rid(self.character_aliases[pid])
+        if pid.startswith("PID_A_"):
+            return self._handover_to_global_character(pid, "GameData/Person/A_HANDOVER.bin.lz")
+        if pid.startswith("PID_B_"):
+            return self._handover_to_global_character(pid, "GameData/Person/B_HANDOVER.bin.lz")
+        if pid.startswith("PID_C_"):
+            return self._handover_to_global_character(pid, "GameData/Person/C_HANDOVER.bin.lz")
         return None
 
     def to_rid(self, pid):
@@ -199,6 +205,13 @@ class FE14CharactersVendor:
             [reclass_1_name, reclass_2_name],
             personal_skill_name,
         )
+
+    def _handover_to_global_character(self, pid, key):
+        if self.gd.file_exists(key, False):
+            rid = self.gd.multi_open("person", key)
+            return self.gd.list_key_to_rid(rid, "people", pid)
+        else:
+            return None
 
     @staticmethod
     def _should_include_character(c: FE14CharacterInfo, user_config: FE14UserConfig):

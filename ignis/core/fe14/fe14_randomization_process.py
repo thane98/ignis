@@ -82,12 +82,12 @@ class FE14RandomizationProcess(RandomizationProcess):
         return [
             FE14GlobalCharacterRandomizationStep(),
             FE14PersonRandomizationStep(),
+            HandoverRandomizationStep(),
             FE14DisposRandomizationStep(),
             FE14UpdateDialogueStep(),
             FE14UpdateScriptsStep(),
             FE14RandomizeChestItemsStep(),
             FE14UpdateParalogueUnlocksStep(),
-            HandoverRandomizationStep(),
             UnlockHeroBattlesStep(),
             UpdateCastleJoinStep(),
             LeoA001ModelReplacementStep(),
