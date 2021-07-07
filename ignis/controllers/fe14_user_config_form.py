@@ -1,3 +1,4 @@
+import random
 from typing import List
 
 from PySide6.QtCore import Signal
@@ -13,6 +14,8 @@ class FE14UserConfigForm(Ui_FE14UserConfigForm):
 
     def __init__(self):
         super().__init__()
+
+        self.seed_input.setValue(random.randint(-10000, 10000))
 
         self.birthright_check_box.stateChanged.connect(self._on_update)
         self.conquest_check_box.stateChanged.connect(self._on_update)

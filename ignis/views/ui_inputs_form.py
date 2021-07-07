@@ -1,13 +1,8 @@
-from PySide6 import QtGui
-from PySide6.QtGui import QMovie
 from PySide6.QtWidgets import (
     QWidget,
     QGroupBox,
     QHBoxLayout,
     QVBoxLayout,
-    QPushButton,
-    QLabel,
-    QProgressBar,
 )
 
 from ignis.controllers.directory_input import DirectoryInput
