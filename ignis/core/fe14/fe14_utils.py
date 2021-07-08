@@ -9,6 +9,16 @@ from ignis.model.weapon_rank import WeaponRank
 _SKILL_FIELDS = ["skill_1", "skill_2", "skill_3", "skill_4", "skill_5"]
 
 
+def get_equipped_skill_names(gd, skills, char_rid):
+    equipped_skills = []
+    for field in _SKILL_FIELDS:
+        skill_rid = gd.rid(char_rid, field)
+        if skill_rid != skills.default_skill():
+            if name := gd.display(skill_rid):
+                equipped_skills.append(name)
+    return equipped_skills
+
+
 def get_route_file(gd, base_path, route, filename, localized=False):
     if route == FE14Route.BIRTHRIGHT:
         route_dir = "A"

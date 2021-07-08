@@ -70,7 +70,7 @@ class Ui_FE14UserConfigForm(QWidget):
         self.randomize_equip_skills_check_box = QCheckBox("Randomize Equip Skills")
         self.randomize_equip_skills_check_box.setChecked(True)
         self.include_all_skills_check_box = QCheckBox("Include ALL Skills in the Skill Pool")
-        self.include_all_skills_check_box.setChecked(True)
+        self.include_all_skills_check_box.setChecked(False)
 
         skills_layout = QVBoxLayout()
         skills_layout.addWidget(self.randomize_personal_skills_check_box)

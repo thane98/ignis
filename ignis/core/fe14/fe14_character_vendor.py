@@ -1,6 +1,8 @@
 import ctypes
 from random import Random
 
+from ignis.core.fe14 import fe14_utils
+
 from ignis.core.fe14.fe14_character_shuffler import FE14CharacterShuffler
 from ignis.core.fe14.fe14_classes_vendor import FE14ClassesVendor
 from ignis.core.fe14.fe14_skills_vendor import FE14SkillsVendor
@@ -199,9 +201,12 @@ class FE14CharactersVendor:
         personal_skill_name = self.gd.display(
             self.gd.rid(char_rid, "personal_skill_normal")
         )
+        equipped_skills = fe14_utils.get_equipped_skill_names(self.gd, self.skills, char_rid)
         bases = self.bytes_to_signed_int_list(self.gd.bytes(char_rid, "bases"))
         growths = self.bytes_to_signed_int_list(self.gd.bytes(char_rid, "growths"))
         modifiers = self.bytes_to_signed_int_list(self.gd.bytes(char_rid, "modifiers"))
+        level = self.gd.int(char_rid, "level")
+        internal_level = self.gd.int(char_rid, "internal_level")
         return FE14CharacterReport(
             name,
             replacing_name,
@@ -209,9 +214,12 @@ class FE14CharactersVendor:
             secondary_class_name,
             [reclass_1_name, reclass_2_name],
             personal_skill_name,
+            equipped_skills,
             bases,
             growths,
-            modifiers
+            modifiers,
+            level,
+            internal_level,
         )
 
     def _handover_to_global_character(self, pid, key):
