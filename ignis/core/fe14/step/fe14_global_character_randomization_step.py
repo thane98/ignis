@@ -4,6 +4,9 @@ from ignis.core.fe14 import fe14_utils
 from ignis.core.randomization_step import RandomizationStep
 
 
+_ALL_SUPPORT_ROUTES = 7
+
+
 class FE14GlobalCharacterRandomizationStep(RandomizationStep):
     def should_run(self, user_config) -> bool:
         return True
@@ -14,6 +17,7 @@ class FE14GlobalCharacterRandomizationStep(RandomizationStep):
     def run(self, gd, user_config, dependencies):
         rand = dependencies.rand
         characters = dependencies.characters
+        skills = dependencies.skills
         stat_strategy = stat_randomization_strategy.from_algorithm(
             user_config.stat_randomization_algorithm
         )
@@ -21,8 +25,8 @@ class FE14GlobalCharacterRandomizationStep(RandomizationStep):
             rid = characters.to_rid(char.pid)
             replacing_rid = characters.get_original(replacing.pid)
             aid = gd.string(rid, "aid")
-            if user_config.randomize_skills:
-                fe14_utils.apply_randomized_skills(gd, characters, aid, rid)
+            if user_config.randomize_personal_skills:
+                fe14_utils.apply_randomized_skills(gd, characters, skills, aid, rid)
             if user_config.randomize_classes:
                 fe14_utils.apply_randomized_class_set(
                     gd,
@@ -42,6 +46,7 @@ class FE14GlobalCharacterRandomizationStep(RandomizationStep):
                 gd.set_int(
                     rid, "internal_level", gd.int(replacing_rid, "internal_level")
                 )
+                gd.set_int(rid, "support_route", _ALL_SUPPORT_ROUTES)
                 parent = gd.rid(rid, "parent")
                 if parent and parent != characters.default_character():
                     replacement = characters.get_replacement(gd.key(parent))

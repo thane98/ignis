@@ -27,7 +27,9 @@ class FE14UserConfigForm(Ui_FE14UserConfigForm):
         return FE14UserConfig(
             routes=self._get_routes(),
             stat_randomization_algorithm=self._get_stat_randomization_algorithm(),
-            randomize_skills=self.randomize_skills_check_box.isChecked(),
+            randomize_personal_skills=self.randomize_personal_skills_check_box.isChecked(),
+            randomize_equip_skills=self.randomize_equip_skills_check_box.isChecked(),
+            include_all_skills_in_skill_pool=self.include_all_skills_check_box.isChecked(),
             randomize_classes=self.randomize_classes_check_box.isChecked(),
             randomize_chest_items=self.randomize_chest_items_check_box.isChecked(),
             unlock_hero_battles=self.unlock_hero_battles_check_box.isChecked(),

@@ -9,7 +9,9 @@ from ignis.model.stat_randomization_algorithm import StatRandomizationAlgorithm
 class FE14UserConfig:
     routes: List[FE14Route]
     stat_randomization_algorithm: StatRandomizationAlgorithm
-    randomize_skills: bool
+    randomize_personal_skills: bool
+    randomize_equip_skills: bool
+    include_all_skills_in_skill_pool: bool
     randomize_classes: bool
     randomize_chest_items: bool
     unlock_hero_battles: bool

@@ -12,6 +12,7 @@ from ignis.model.weapon_rank import WeaponRank
 class FE14GameConfig(BaseModel):
     characters: List[FE14CharacterInfo]
     classes: List[FE14ClassInfo]
+    equip_skills: List[str]
     personal_skills: List[str]
     items: Dict[ItemCategory, Dict[WeaponRank, List[str]]]
     treasures: List[str]

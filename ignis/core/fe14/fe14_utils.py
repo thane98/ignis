@@ -6,6 +6,9 @@ from ignis.model.weapon_exp import WeaponExp
 from ignis.model.weapon_rank import WeaponRank
 
 
+_SKILL_FIELDS = ["skill_1", "skill_2", "skill_3", "skill_4", "skill_5"]
+
+
 def get_route_file(gd, base_path, route, filename, localized=False):
     if route == FE14Route.BIRTHRIGHT:
         route_dir = "A"
@@ -35,11 +38,21 @@ def get_all_files(gd, base_path, ext, chapters, localized=False):
     return files
 
 
-def apply_randomized_skills(gd, characters, aid, rid):
+def apply_randomized_skills(gd, characters, skills, aid, rid):
     personal_skill = characters.get_character_personal_skill(aid)
     gd.set_rid(rid, "personal_skill_normal", personal_skill)
     gd.set_rid(rid, "personal_skill_hard", personal_skill)
     gd.set_rid(rid, "personal_skill_lunatic", personal_skill)
+
+    character_skills = {personal_skill}
+    for field in _SKILL_FIELDS:
+        skill_rid = gd.rid(rid, field)
+        if skill_rid != skills.default_skill():
+            new_skill = skills.random_equip_skill()
+            while new_skill in character_skills:
+                new_skill = skills.random_equip_skill()
+            character_skills.add(new_skill)
+            gd.set_rid(rid, field, new_skill)
 
 
 def apply_randomized_class_set(

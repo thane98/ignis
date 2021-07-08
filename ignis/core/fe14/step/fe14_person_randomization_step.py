@@ -22,6 +22,7 @@ class FE14PersonRandomizationStep(RandomizationStep):
         rand = dependencies.rand
         chapters = dependencies.chapters
         characters = dependencies.characters
+        skills = dependencies.skills
 
         # Get the target files
         files = fe14_utils.get_all_files(gd, "GameData/Person", ".bin.lz", chapters)
@@ -33,14 +34,14 @@ class FE14PersonRandomizationStep(RandomizationStep):
             people = gd.items(rid, "people")
             for rid in people:
                 has_changes = self._randomize_person(
-                    gd, rid, rand, user_config, characters
+                    gd, rid, rand, user_config, characters, skills
                 )
                 dirty = dirty or has_changes
             if dirty:
                 gd.multi_set_dirty("person", f, True)
 
     @staticmethod
-    def _randomize_person(gd, rid, rand, user_config, characters):
+    def _randomize_person(gd, rid, rand, user_config, characters, skills):
         # See if the character matches one that we're randomizing
         dirty = False
         char = characters.get_global_character(gd.key(rid), gd.string(rid, "aid"))
@@ -63,9 +64,9 @@ class FE14PersonRandomizationStep(RandomizationStep):
         if gd.key(rid) in _BANNED_PIDS:
             return dirty
 
-        if user_config.randomize_skills and gd.rid(rid, "personal_skill_normal"):
+        if user_config.randomize_personal_skills and gd.rid(rid, "personal_skill_normal"):
             dirty = True
-            fe14_utils.apply_randomized_skills(gd, characters, aid, rid)
+            fe14_utils.apply_randomized_skills(gd, characters, skills, aid, rid)
         if user_config.randomize_classes:
             dirty = True
             # TODO: Just copy weapon ranks from global character to the new one?

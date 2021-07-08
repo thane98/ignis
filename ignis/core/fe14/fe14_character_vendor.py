@@ -1,3 +1,4 @@
+import ctypes
 from random import Random
 
 from ignis.core.fe14.fe14_character_shuffler import FE14CharacterShuffler
@@ -165,6 +166,7 @@ class FE14CharactersVendor:
             if char_fid and replacing_fid:
                 replacements[replacing_fid[4:]] = char_fid[4:]
             replacements[replacing_name] = char_name
+            replacements[replacing_name.upper()] = char_name.upper()
             replacements[replacing.voice_set] = character.voice_set
         return replacements
 
@@ -197,6 +199,9 @@ class FE14CharactersVendor:
         personal_skill_name = self.gd.display(
             self.gd.rid(char_rid, "personal_skill_normal")
         )
+        bases = self.bytes_to_signed_int_list(self.gd.bytes(char_rid, "bases"))
+        growths = self.bytes_to_signed_int_list(self.gd.bytes(char_rid, "growths"))
+        modifiers = self.bytes_to_signed_int_list(self.gd.bytes(char_rid, "modifiers"))
         return FE14CharacterReport(
             name,
             replacing_name,
@@ -204,6 +209,9 @@ class FE14CharactersVendor:
             secondary_class_name,
             [reclass_1_name, reclass_2_name],
             personal_skill_name,
+            bases,
+            growths,
+            modifiers
         )
 
     def _handover_to_global_character(self, pid, key):
@@ -212,6 +220,10 @@ class FE14CharactersVendor:
             return self.gd.list_key_to_rid(rid, "people", pid)
         else:
             return None
+
+    @staticmethod
+    def bytes_to_signed_int_list(buffer):
+        return list(map(lambda b: ctypes.c_int8(b).value, buffer))
 
     @staticmethod
     def _should_include_character(c: FE14CharacterInfo, user_config: FE14UserConfig):

@@ -58,7 +58,7 @@ class FE14RandomizationProcess(RandomizationProcess):
 
     def init_dependencies(self):
         rand = Random(self.user_config.seed)
-        skills = FE14SkillsVendor(self.gd, self.game_config, rand)
+        skills = FE14SkillsVendor(self.gd, self.game_config, self.user_config, rand)
         classes = FE14ClassesVendor(self.gd, self.game_config, rand)
         characters = FE14CharactersVendor(
             self.gd, self.game_config, self.user_config, skills, classes, rand

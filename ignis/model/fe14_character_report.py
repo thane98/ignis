@@ -10,6 +10,9 @@ class FE14CharacterReport:
     secondary_class: Optional[str]
     reclasses: List[Optional[str]]
     personal_skill: str
+    bases: List[int]
+    growths: List[int]
+    modifiers: List[int]
 
     def format(self):
         return "\n".join(
@@ -20,5 +23,8 @@ class FE14CharacterReport:
                 f"Secondary Class: {self.secondary_class}",
                 f"Reclasses: {self.reclasses[0]},{self.reclasses[1]}",
                 "Personal Skill: " + self.personal_skill,
+                f"Bases: {self.bases}",
+                f"Growths: {self.growths}",
+                f"Modifiers: {self.modifiers}",
             ]
         )
