@@ -1,5 +1,6 @@
 import logging
 
+from PySide6 import QtGui
 from PySide6.QtCore import QThreadPool
 from PySide6.QtGui import QCloseEvent, QIcon
 from PySide6.QtWidgets import QProgressDialog
@@ -49,7 +50,8 @@ class MainWindow(Ui_MainWindow):
         self.randomize_button.setEnabled(False)
         self.thread_pool.start(self.load_worker)
 
-        self.progress_dialog = QProgressDialog()
+        self.progress_dialog = QProgressDialog(parent=self)
+        self.progress_dialog.setWindowModality(QtGui.Qt.WindowModal)
         self.progress_dialog.setWindowTitle("Randomizing...")
         self.progress_dialog.setWindowIcon(QIcon("ignis.ico"))
         self.progress_dialog.setRange(0, 0)
