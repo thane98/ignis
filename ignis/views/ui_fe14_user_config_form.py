@@ -103,12 +103,15 @@ class Ui_FE14UserConfigForm(QWidget):
             "Add Anna (or her replacement) to Castle Join"
         )
         self.add_anna_check_box.setChecked(True)
+        self.add_sprite_fix_box = QCheckBox("Add Moonling's Generic Songstress Sprite")
+        self.add_sprite_fix_box.setChecked(True)
         combat_and_misc_layout = QVBoxLayout()
         combat_and_misc_layout.setAlignment(QtGui.Qt.AlignTop)
         combat_and_misc_layout.addWidget(self.randomize_classes_check_box)
         combat_and_misc_layout.addWidget(self.randomize_chest_items_check_box)
         combat_and_misc_layout.addWidget(self.unlock_hero_battles_check_box)
         combat_and_misc_layout.addWidget(self.add_anna_check_box)
+        combat_and_misc_layout.addWidget(self.add_sprite_fix_box)
         combat_and_misc_box = QGroupBox("Classes and Misc.")
         combat_and_misc_box.setLayout(combat_and_misc_layout)
 

@@ -21,5 +21,6 @@ class FE14UserConfig:
     randomize_children: bool
     randomize_join_order: bool
     same_sex_swaps_only: bool
+    songstress_sprite_fix: bool
     seed: int
     passes: int

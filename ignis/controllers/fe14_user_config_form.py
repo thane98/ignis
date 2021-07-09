@@ -34,6 +34,7 @@ class FE14UserConfigForm(Ui_FE14UserConfigForm):
             randomize_chest_items=self.randomize_chest_items_check_box.isChecked(),
             unlock_hero_battles=self.unlock_hero_battles_check_box.isChecked(),
             add_anna_to_castle_join=self.add_anna_check_box.isChecked(),
+            songstress_sprite_fix=self.add_sprite_fix_box.isChecked(),
             include_anna_in_character_pool=self.add_anna_check_box.isChecked(),
             include_amiibo_units_in_character_pool=self.amiibo_check_box.isChecked(),
             randomize_children=self.children_check_box.isChecked(),
