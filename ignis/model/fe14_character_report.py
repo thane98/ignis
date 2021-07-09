@@ -31,6 +31,6 @@ class FE14CharacterReport:
                 f"Growths: {self.growths}",
                 f"Modifiers: {self.modifiers}",
                 "Level: " + str(self.level),
-                "Internal Level: " + str(self.internal_level)
+                "Internal Level: " + str(self.internal_level),
             ]
         )

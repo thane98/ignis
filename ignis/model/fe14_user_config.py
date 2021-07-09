@@ -22,3 +22,4 @@ class FE14UserConfig:
     randomize_join_order: bool
     same_sex_swaps_only: bool
     seed: int
+    passes: int

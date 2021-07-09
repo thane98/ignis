@@ -40,6 +40,7 @@ class FE14UserConfigForm(Ui_FE14UserConfigForm):
             randomize_join_order=self.randomize_join_order_check_box.isChecked(),
             same_sex_swaps_only=self.same_sex_only_check_box.isChecked(),
             seed=self.seed_input.value(),
+            passes=self.passes_spin_box.value(),
         )
 
     def fields_are_valid(self):
@@ -61,6 +62,8 @@ class FE14UserConfigForm(Ui_FE14UserConfigForm):
     def _get_stat_randomization_algorithm(self) -> StatRandomizationAlgorithm:
         if self.no_stats_radio.isChecked():
             return StatRandomizationAlgorithm.NONE
+        elif self.weighted_redistribute_stats_radio.isChecked():
+            return StatRandomizationAlgorithm.WEIGHTED_REDISTRIBUTE
         elif self.redistribute_stats_radio.isChecked():
             return StatRandomizationAlgorithm.REDISTRIBUTE
         else:

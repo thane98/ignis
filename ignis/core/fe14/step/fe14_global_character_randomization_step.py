@@ -54,6 +54,6 @@ class FE14GlobalCharacterRandomizationStep(RandomizationStep):
                         gd.set_rid(rid, "parent", characters.to_rid(replacement))
 
             fe14_utils.apply_randomized_stats(
-                gd, rand, replacing_rid, rid, stat_strategy
+                gd, rand, replacing_rid, rid, stat_strategy, user_config.passes
             )
         gd.set_store_dirty("gamedata", True)

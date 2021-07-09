@@ -64,7 +64,9 @@ class FE14PersonRandomizationStep(RandomizationStep):
         if gd.key(rid) in _BANNED_PIDS:
             return dirty
 
-        if user_config.randomize_personal_skills and gd.rid(rid, "personal_skill_normal"):
+        if user_config.randomize_personal_skills and gd.rid(
+            rid, "personal_skill_normal"
+        ):
             dirty = True
             fe14_utils.apply_randomized_skills(gd, characters, skills, aid, rid)
         if user_config.randomize_classes:
@@ -77,7 +79,7 @@ class FE14PersonRandomizationStep(RandomizationStep):
             stat_strategy = stat_randomization_strategy.from_algorithm(
                 user_config.stat_randomization_algorithm
             )
-            fe14_utils.apply_randomized_stats(gd, rand, rid, rid, stat_strategy)
+            fe14_utils.apply_randomized_stats(gd, rand, rid, rid, stat_strategy, user_config.passes)
         return dirty
 
     @staticmethod

@@ -108,11 +108,17 @@ class FE14CharactersVendor:
         if pid in self.character_aliases:
             return self.to_rid(self.character_aliases[pid])
         if pid.startswith("PID_A_"):
-            return self._handover_to_global_character(pid, "GameData/Person/A_HANDOVER.bin.lz")
+            return self._handover_to_global_character(
+                pid, "GameData/Person/A_HANDOVER.bin.lz"
+            )
         if pid.startswith("PID_B_"):
-            return self._handover_to_global_character(pid, "GameData/Person/B_HANDOVER.bin.lz")
+            return self._handover_to_global_character(
+                pid, "GameData/Person/B_HANDOVER.bin.lz"
+            )
         if pid.startswith("PID_C_"):
-            return self._handover_to_global_character(pid, "GameData/Person/C_HANDOVER.bin.lz")
+            return self._handover_to_global_character(
+                pid, "GameData/Person/C_HANDOVER.bin.lz"
+            )
         return None
 
     def to_rid(self, pid):
@@ -201,7 +207,9 @@ class FE14CharactersVendor:
         personal_skill_name = self.gd.display(
             self.gd.rid(char_rid, "personal_skill_normal")
         )
-        equipped_skills = fe14_utils.get_equipped_skill_names(self.gd, self.skills, char_rid)
+        equipped_skills = fe14_utils.get_equipped_skill_names(
+            self.gd, self.skills, char_rid
+        )
         bases = self.bytes_to_signed_int_list(self.gd.bytes(char_rid, "bases"))
         growths = self.bytes_to_signed_int_list(self.gd.bytes(char_rid, "growths"))
         modifiers = self.bytes_to_signed_int_list(self.gd.bytes(char_rid, "modifiers"))

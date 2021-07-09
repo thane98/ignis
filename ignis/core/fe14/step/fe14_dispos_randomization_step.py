@@ -12,7 +12,13 @@ _DIVINE_WEAPONS = {
 
 _ITEM_FIELDS = ["item_1", "item_2", "item_3", "item_4", "item_5"]
 
-_ITEM_BITFLAGS = ["item_flags_1", "item_flags_2", "item_flags_3", "item_flags_4", "item_flags_5"]
+_ITEM_BITFLAGS = [
+    "item_flags_1",
+    "item_flags_2",
+    "item_flags_3",
+    "item_flags_4",
+    "item_flags_5",
+]
 
 _BANNED_PIDS = {"PID_A001_ボス", "PID_A005_リョウマ"}
 
@@ -66,7 +72,10 @@ class FE14DisposRandomizationStep(RandomizationStep):
             while i < len(_ITEM_FIELDS) and gd.rid(spawn, _ITEM_FIELDS[i]):
                 item_rid = gd.rid(spawn, _ITEM_FIELDS[i])
                 iid = gd.key(item_rid)
-                if iid not in _DIVINE_WEAPONS and gd.int(item_rid, "weapon_category") < 20:
+                if (
+                    iid not in _DIVINE_WEAPONS
+                    and gd.int(item_rid, "weapon_category") < 20
+                ):
                     weapon = items.random_weapon_for_character(char)
                     gd.set_rid(spawn, _ITEM_FIELDS[i], weapon)
                     added_at_least_one_weapon = True

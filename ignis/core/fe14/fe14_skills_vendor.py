@@ -6,7 +6,9 @@ from ignis.model.fe14_game_config import FE14GameConfig
 
 
 class FE14SkillsVendor:
-    def __init__(self, gd, game_config: FE14GameConfig, user_config: FE14UserConfig, rand: Random):
+    def __init__(
+        self, gd, game_config: FE14GameConfig, user_config: FE14UserConfig, rand: Random
+    ):
         self.gd = gd
         self.user_config = user_config
         self.personal_skills = game_config.personal_skills

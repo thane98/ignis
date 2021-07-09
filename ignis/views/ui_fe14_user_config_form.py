@@ -7,6 +7,7 @@ from PySide6.QtWidgets import (
     QGroupBox,
     QRadioButton,
     QSpinBox,
+    QFormLayout,
 )
 
 
@@ -42,12 +43,21 @@ class Ui_FE14UserConfigForm(QWidget):
         characters_box = QGroupBox("Optional Characters")
         characters_box.setLayout(characters_box_layout)
 
+        passes_layout = QFormLayout()
+        self.passes_spin_box = QSpinBox()
+        self.passes_spin_box.setRange(5, 40)
+        self.passes_spin_box.setValue(20)
+        passes_layout.addRow("Passes", self.passes_spin_box)
+
+        self.weighted_redistribute_stats_radio = QRadioButton("Weighted Redistribute")
+        self.weighted_redistribute_stats_radio.setChecked(True)
         self.redistribute_stats_radio = QRadioButton("Redistribute")
-        self.redistribute_stats_radio.setChecked(True)
         self.shuffle_stats_radio = QRadioButton("Shuffle")
         self.no_stats_radio = QRadioButton("None")
         stats_layout = QVBoxLayout()
         stats_layout.setAlignment(QtGui.Qt.AlignTop)
+        stats_layout.addLayout(passes_layout)
+        stats_layout.addWidget(self.weighted_redistribute_stats_radio)
         stats_layout.addWidget(self.redistribute_stats_radio)
         stats_layout.addWidget(self.shuffle_stats_radio)
         stats_layout.addWidget(self.no_stats_radio)
@@ -65,11 +75,15 @@ class Ui_FE14UserConfigForm(QWidget):
         join_order_box = QGroupBox("Join Order Randomization")
         join_order_box.setLayout(join_order_layout)
 
-        self.randomize_personal_skills_check_box = QCheckBox("Randomize Personal Skills")
+        self.randomize_personal_skills_check_box = QCheckBox(
+            "Randomize Personal Skills"
+        )
         self.randomize_personal_skills_check_box.setChecked(True)
         self.randomize_equip_skills_check_box = QCheckBox("Randomize Equip Skills")
         self.randomize_equip_skills_check_box.setChecked(True)
-        self.include_all_skills_check_box = QCheckBox("Include ALL Skills in the Skill Pool")
+        self.include_all_skills_check_box = QCheckBox(
+            "Include ALL Skills in the Skill Pool"
+        )
         self.include_all_skills_check_box.setChecked(False)
 
         skills_layout = QVBoxLayout()
@@ -100,7 +114,6 @@ class Ui_FE14UserConfigForm(QWidget):
 
         self.seed_input = QSpinBox()
         self.seed_input.setRange(-2147483648, 2147483647)
-        self.seed_input.setValue(101)
         seed_layout = QVBoxLayout()
         seed_layout.addWidget(self.seed_input)
         seed_box = QGroupBox("RNG Seed")
@@ -110,8 +123,8 @@ class Ui_FE14UserConfigForm(QWidget):
         grid.setContentsMargins(0, 0, 0, 0)
         grid.addWidget(route_box, 0, 0)
         grid.addWidget(characters_box, 1, 0)
-        grid.addWidget(stats_box, 0, 1)
-        grid.addWidget(join_order_box, 1, 1)
+        grid.addWidget(join_order_box, 0, 1)
+        grid.addWidget(stats_box, 1, 1)
         grid.addWidget(skills_box, 0, 2, 1, 1)
         grid.addWidget(combat_and_misc_box, 1, 2, 1, 1)
         grid.addWidget(seed_box, 2, 0, 1, 3)

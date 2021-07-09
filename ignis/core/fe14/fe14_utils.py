@@ -104,11 +104,13 @@ def apply_randomized_bitflags(gd, characters, aid, rid1, rid2):
         gd.set_int(rid1, field, value)
 
 
-def apply_randomized_stats(gd, rand, source_rid, destination_rid, strategy):
+def apply_randomized_stats(gd, rand, source_rid, destination_rid, strategy, passes):
     gd.set_bytes(
         destination_rid,
         "bases",
-        strategy.randomize_stats(rand, gd.bytes(source_rid, "bases"), limits=(-5, 100)),
+        strategy.randomize_stats(
+            rand, gd.bytes(source_rid, "bases"), limits=(-5, 100), passes=passes
+        ),
     )
     gd.set_bytes(
         destination_rid,
@@ -118,13 +120,14 @@ def apply_randomized_stats(gd, rand, source_rid, destination_rid, strategy):
             gd.bytes(source_rid, "growths"),
             limits=(0, 95),
             step_size=5,
+            passes=passes,
         ),
     )
     gd.set_bytes(
         destination_rid,
         "modifiers",
         strategy.randomize_stats(
-            rand, gd.bytes(source_rid, "modifiers"), limits=(-3, 3)
+            rand, gd.bytes(source_rid, "modifiers"), limits=(-3, 3), passes=passes
         ),
     )
 
