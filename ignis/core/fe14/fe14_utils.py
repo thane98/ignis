@@ -66,9 +66,19 @@ def apply_randomized_skills(gd, characters, skills, aid, rid):
 
 
 def apply_randomized_class_set(
-    gd, characters, aid, rid, ranks_source, rand, gender=None, class_level=None
+    gd,
+    characters,
+    aid,
+    rid,
+    ranks_source,
+    rand,
+    gender=None,
+    class_level=None,
+    staff_only_ban=False,
 ):
-    c1, c2, r1, r2 = characters.get_character_class_set(aid, gender, class_level)
+    c1, c2, r1, r2 = characters.get_character_class_set(
+        aid, gender, class_level, staff_only_ban
+    )
     gd.set_rid(rid, "class_1", c1)
     gd.set_rid(rid, "class_2", c2)
     gd.set_rid(rid, "reclass_1", r1)

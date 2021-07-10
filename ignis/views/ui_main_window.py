@@ -34,7 +34,7 @@ class Ui_MainWindow(QWidget):
         layout.setStretch(1, 1)
         self.setLayout(layout)
 
-        self.setFixedSize(650, 625)
+        self.setFixedSize(700, 625)
 
         self.setWindowIcon(QIcon("ignis.ico"))
         self.setWindowTitle("Ignis - FE14 Randomizer")

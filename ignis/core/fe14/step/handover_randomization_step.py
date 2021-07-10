@@ -61,7 +61,9 @@ class HandoverRandomizationStep(RandomizationStep):
         strategy = stat_randomization_strategy.from_algorithm(
             user_config.stat_randomization_algorithm
         )
-        fe14_utils.apply_randomized_stats(gd, rand, rid, rid, strategy, user_config.passes)
+        fe14_utils.apply_randomized_stats(
+            gd, rand, rid, rid, strategy, user_config.passes
+        )
 
     @staticmethod
     def _get_handover_files(routes):

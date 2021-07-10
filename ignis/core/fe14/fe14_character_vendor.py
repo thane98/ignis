@@ -138,13 +138,15 @@ class FE14CharactersVendor:
             self.character_skills[aid] = skill
             return skill
 
-    def get_character_class_set(self, aid, gender=None, level=None):
+    def get_character_class_set(
+        self, aid, gender=None, level=None, staff_only_ban=False
+    ):
         if aid in self.character_classes:
             return self.character_classes[aid]
         elif not gender or not level:
             raise ValueError("Need character info to generate a class set.")
         else:
-            class_set = self.classes.random_class_set(gender, level)
+            class_set = self.classes.random_class_set(gender, level, staff_only_ban)
             self.character_classes[aid] = class_set
             return class_set
 

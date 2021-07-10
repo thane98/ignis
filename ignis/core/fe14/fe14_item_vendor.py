@@ -1,3 +1,4 @@
+from ignis.model.item_category import ItemCategory
 from ignis.model.weapon_exp import WeaponExp
 from ignis.model.weapon_rank import WeaponRank
 
@@ -24,7 +25,7 @@ class FE14ItemVendor:
         table_rid, table_field_id = self.gd.table("items")
         return self.gd.list_get(table_rid, table_field_id, 0)
 
-    def random_weapon_for_character(self, rid):
+    def random_weapon_for_character(self, rid, desired_rank=None, staff_ban=False):
         # Get usable weapons for the class + character experience
         character_class = self.gd.rid(rid, "class_1")
         class_weapons = self.classes.get_usable_weapons(character_class)
@@ -35,16 +36,21 @@ class FE14ItemVendor:
         for i, info in enumerate(class_weapons):
             if info:
                 category, class_rank = info
-                character_rank = character_ranks[i].get_rank()
-                if class_rank and character_rank:
-                    reconciled_rank = self._reconcile_character_and_class_exp(
-                        character_rank, class_rank
-                    )
-                    reconciled_weapons.append((category, reconciled_rank))
+                if not staff_ban or category != ItemCategory.STAFF:
+                    character_rank = character_ranks[i].get_rank()
+                    if class_rank and character_rank:
+                        reconciled_rank = self._reconcile_character_and_class_exp(
+                            character_rank, class_rank
+                        )
+                        reconciled_weapons.append((category, reconciled_rank))
+        if not reconciled_weapons:
+            return None
 
         # Select a random category, then get a random weapon for the rank.
         # If no weapons for the rank, try the previous rank.
         category, rank = self.rand.choice(reconciled_weapons)
+        if desired_rank:
+            rank = desired_rank
         weapon = None
         while not weapon:
             bucket = self.items.get(category)

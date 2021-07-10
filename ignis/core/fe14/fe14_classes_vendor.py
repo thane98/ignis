@@ -53,10 +53,17 @@ class FE14ClassesVendor:
                 weapons.append(None)
         return weapons
 
-    def random_class_set(self, gender, level):
-        # Generate a set.
-        class_1 = self.rand.choice(self.buckets[(gender, level)])
-        class_1_rid = self.jid_to_rid_mapping[class_1.jid]
+    def random_class_set(self, gender, level, staff_only_ban=False):
+        done = False
+        while not done:
+            class_1 = self.rand.choice(self.buckets[(gender, level)])
+            class_1_rid = self.jid_to_rid_mapping[class_1.jid]
+            if not staff_only_ban:
+                done = True
+            else:
+                usable_weapons = self.get_usable_weapons(class_1_rid)
+                non_null = list(filter(lambda i: bool(i), usable_weapons))
+                done = len(non_null) > 1 or non_null[0][0] != ItemCategory.STAFF
         if (
             class_1.paired_classes[0] == self._default_class()
             and not class_1.paired_classes[1] == self._default_class()

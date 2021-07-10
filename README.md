@@ -35,6 +35,7 @@ Ignis requires Rust and Python 3.8.x. You will also need to install the python p
 6. If the install succeeds, you can run the main script with the command `python ignis/ui/main.py`.
 
 ## Credits
+- Moonling for the generic songstress sprite
 - DeathChaos, TildeHat, Moonling, and RainThunder for research and reverse engineering that made Paragon and Ignis possible.
 - @SinsofSloth and @muhmuhten for contributions to Paragon which handles most of the low-level details for Ignis.
 

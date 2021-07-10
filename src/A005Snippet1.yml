@@ -1,0 +1,64 @@
+---
+- VarAddr: 0
+- CallByName:
+    - "ev::UnitGetPlayer"
+    - 0
+- CompleteAssign
+- VarLoad: 0
+- JumpZero: l0
+- VarLoad: 0
+- StrLoad: SPID_特殊武器使用不可
+- CallByName:
+    - "ev::UnitClrPrivateSkill"
+    - 2
+- Consume
+- VarLoad: 0
+- StrLoad: PID_プレイヤー女
+- CallByName:
+    - "ev::UnitIsPID"
+    - 2
+- JumpZero: l1
+- VarLoad: 0
+- StrLoad: JID_竜女
+- CallByName:
+    - "ev::UnitSetJID"
+    - 2
+- Consume
+- Jump: l2
+- Label: l1
+- VarLoad: 0
+- StrLoad: JID_竜男
+- CallByName:
+    - "ev::UnitSetJID"
+    - 2
+- Consume
+- Label: l2
+- VarLoad: 0
+- StrLoad: IID_竜のブレス
+- CallByName:
+    - "ev::ItemGainSilent"
+    - 2
+- Consume
+- VarLoad: 0
+- StrLoad: IID_竜のブレス
+- CallByName:
+    - "ev::UnitItemEquip2"
+    - 2
+- Consume
+- VarLoad: 0
+- VarLoad: 0
+- CallByName:
+    - "ev::UnitGetMHP"
+    - 1
+- CallByName:
+    - "ev::UnitSetHP"
+    - 2
+- Consume
+- VarLoad: 0
+- StrLoad: SPID_敗北条件
+- CallByName:
+    - "ev::UnitSetPrivateSkill"
+    - 2
+- Consume
+- Label: l0
+- ReturnFalse

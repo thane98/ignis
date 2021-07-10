@@ -39,6 +39,7 @@ class FE14UserConfigForm(Ui_FE14UserConfigForm):
             include_amiibo_units_in_character_pool=self.amiibo_check_box.isChecked(),
             randomize_children=self.children_check_box.isChecked(),
             randomize_join_order=self.randomize_join_order_check_box.isChecked(),
+            randomize_player=self.player_check_box.isChecked(),
             same_sex_swaps_only=self.same_sex_only_check_box.isChecked(),
             seed=self.seed_input.value(),
             passes=self.passes_spin_box.value(),

@@ -1,0 +1,79 @@
+---
+- StrLoad: TUTID_特効
+- CallByName:
+    - "ev::TutorialSetFlag"
+    - 1
+- Consume
+- StrLoad: TUTID_戦闘（魔法）
+- CallByName:
+    - "ev::TutorialSetFlag"
+    - 1
+- Consume
+- StrLoad: TUTID_歌う
+- CallByName:
+    - "ev::TutorialSetFlag"
+    - 1
+- Consume
+- StrLoad: TUTID_持ち物の落下
+- CallByName:
+    - "ev::TutorialSetFlag"
+    - 1
+- Consume
+- IntLoad: 250
+- CallByName:
+    - "ev::EnvSEOff"
+    - 1
+- Consume
+- IntLoad: 3
+- IntLoad: 0
+- IntLoad: 250
+- CallByName:
+    - "ev::FadeOut"
+    - 3
+- Consume
+- CallByName:
+    - "ev::FadeWait"
+    - 0
+- Consume
+- VarAddr: 0
+- CallByName:
+    - "ev::UnitGetPlayer"
+    - 0
+- CompleteAssign
+- VarLoad: 0
+- JumpZero: l0
+- VarLoad: 0
+- StrLoad: PID_プレイヤー女
+- CallByName:
+    - "ev::UnitIsPID"
+    - 2
+- JumpZero: l1
+- VarLoad: 0
+- StrLoad: "{{fclass}}"
+- CallByName:
+    - "ev::UnitSetJID"
+    - 2
+- Consume
+- Jump: l2
+- Label: l1
+- VarLoad: 0
+- StrLoad: "{{mclass}}"
+- CallByName:
+    - "ev::UnitSetJID"
+    - 2
+- Consume
+- Label: l2
+- VarLoad: 0
+- StrLoad: IID_竜のブレス
+- CallByName:
+    - "ev::UnitItemPutOff"
+    - 2
+- Consume
+- VarLoad: 0
+- StrLoad: SPID_敗北条件
+- CallByName:
+    - "ev::UnitClrPrivateSkill"
+    - 2
+- Consume
+- Label: l0
+- ReturnFalse

@@ -1,0 +1,91 @@
+---
+- IntLoad: 0
+- CallByName:
+    - "ev::ChapterSetWinRuleEnemyNumberLessThanOrEqualTo"
+    - 1
+- Consume
+- IntLoad: 1
+- CallByName:
+    - "ev::ChapterSetTrickDragon"
+    - 1
+- Consume
+- CallByName:
+    - "ev::ChapterGetName"
+    - 0
+- CallByName:
+    - "ev::PersonLoad"
+    - 1
+- Consume
+- CallByName:
+    - "ev::ChapterGetName"
+    - 0
+- CallByName:
+    - "ev::TerrainLoad"
+    - 1
+- Consume
+- CallByName:
+    - "ev::ChapterGetName"
+    - 0
+- CallByName:
+    - "ev::DisposLoad"
+    - 1
+- Consume
+- StrLoad: Player
+- IntLoad: 4
+- CallByName:
+    - "ev::Dispos"
+    - 2
+- Consume
+- StrLoad: Enemy
+- IntLoad: 4
+- CallByName:
+    - "ev::Dispos"
+    - 2
+- Consume
+- StrLoad: Ally
+- IntLoad: 4
+- CallByName:
+    - "ev::Dispos"
+    - 2
+- Consume
+- VarAddr: 0
+- CallByName:
+    - "ev::UnitGetPlayer"
+    - 0
+- CompleteAssign
+- VarLoad: 0
+- JumpZero: l0
+- VarLoad: 0
+- StrLoad: PID_プレイヤー女
+- CallByName:
+    - "ev::UnitIsPID"
+    - 2
+- JumpZero: l1
+- VarLoad: 0
+- StrLoad: "{{fclass}}"
+- CallByName:
+    - "ev::UnitSetJID"
+    - 2
+- Consume
+- VarLoad: 0
+- StrLoad: "{{fitem}}"
+- CallByName:
+    - "ev::ItemGainSilent"
+    - 2
+- Consume
+- Jump: l0
+- Label: l1
+- VarLoad: 0
+- StrLoad: "{{mclass}}"
+- CallByName:
+    - "ev::UnitSetJID"
+    - 2
+- Consume
+- VarLoad: 0
+- StrLoad: "{{mitem}}"
+- CallByName:
+    - "ev::ItemGainSilent"
+    - 2
+- Consume
+- Label: l0
+- ReturnFalse

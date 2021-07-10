@@ -13,7 +13,9 @@ version = "0.11.1"
 features = ["extension-module"]
 
 [dependencies]
-paragon = { git = "https://github.com/thane98/paragon", rev = "3238c24" }
-exalt = { git = "https://github.com/thane98/exalt-rs", rev = "5620a09" }
+paragon = { git = "https://github.com/thane98/paragon", rev = "63c4be1" }
+exalt = { git = "https://github.com/thane98/exalt-rs", rev = "55bab5f" }
 rand = "0.8.4"
 rand_pcg = "0.3.1"
+handlebars = "4.1.0"
+serde_json = "1.0.27"

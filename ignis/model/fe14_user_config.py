@@ -20,6 +20,7 @@ class FE14UserConfig:
     include_amiibo_units_in_character_pool: bool
     randomize_children: bool
     randomize_join_order: bool
+    randomize_player: bool
     same_sex_swaps_only: bool
     songstress_sprite_fix: bool
     seed: int

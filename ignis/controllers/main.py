@@ -33,7 +33,7 @@ try:
     window = MainWindow(configs)
     window.show()
 
-    app.exec_()
+    app.exec()
 except:
     logging.exception("Encountered a fatal error during startup or closing.")
     exit(1)

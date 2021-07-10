@@ -1,0 +1,51 @@
+---
+- StrLoad: STRM_EVT_GARON_B1
+- IntLoad: 0
+- CallByName:
+    - "ev::BGMPlay"
+    - 2
+- Consume
+- StrLoad: A002_OP0
+- CallByName:
+    - "ev::CutScene"
+    - 1
+- Consume
+- StrLoad: STRM_EVT_GARON_B1
+- IntLoad: 0
+- CallByName:
+    - "ev::BGMPlay"
+    - 2
+- Consume
+- StrLoad: A002_OP1
+- CallByName:
+    - "ev::CutScene"
+    - 1
+- Consume
+- VarAddr: 0
+- CallByName:
+    - "ev::UnitGetPlayer"
+    - 0
+- CompleteAssign
+- VarLoad: 0
+- JumpZero: l0
+- VarLoad: 0
+- StrLoad: IID_ガングレリ
+- CallByName:
+    - "ev::UnitItemIsExist"
+    - 2
+- LogicalNot
+- JumpZero: l1
+- VarLoad: 0
+- StrLoad: IID_ガングレリ
+- CallByName:
+    - "ev::ItemGainSilent"
+    - 2
+- Consume
+- Label: l1
+- VarLoad: 0
+- CallByName:
+    - "ev::UnitItemEquip"
+    - 1
+- Consume
+- Label: l0
+- ReturnFalse

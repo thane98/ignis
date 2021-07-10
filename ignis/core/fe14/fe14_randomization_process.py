@@ -1,7 +1,11 @@
 from random import Random
 from typing import List
 
-from ignis.core.fe14.step.apply_songstress_sprite_fix_step import ApplySongstressSpriteFixStep
+from ignis.core.fe14.step.fe14_randomize_player_step import FE14RandomizePlayerStep
+
+from ignis.core.fe14.step.apply_songstress_sprite_fix_step import (
+    ApplySongstressSpriteFixStep,
+)
 from ignis.core.fe14.step.fe14_randomize_chest_items_step import (
     FE14RandomizeChestItemsStep,
 )
@@ -93,6 +97,7 @@ class FE14RandomizationProcess(RandomizationProcess):
             UpdateCastleJoinStep(),
             LeoA001ModelReplacementStep(),
             ApplySongstressSpriteFixStep(),
+            FE14RandomizePlayerStep(),
             SaveGameDataStep(),
             GenerateReportStep(),
         ]
