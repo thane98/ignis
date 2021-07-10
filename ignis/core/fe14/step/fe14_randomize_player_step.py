@@ -27,7 +27,6 @@ class FE14RandomizePlayerStep(RandomizationStep):
         output_path = dependencies.output_path
         rand = dependencies.rand
         characters = dependencies.characters
-        classes = dependencies.classes
         skills = dependencies.skills
         items = dependencies.items
 
@@ -36,10 +35,10 @@ class FE14RandomizePlayerStep(RandomizationStep):
 
         if user_config.randomize_personal_skills:
             fe14_utils.apply_randomized_skills(
-                gd, characters, skills, _MALE_AID, male_rid
+                gd, characters, user_config, skills, _MALE_AID, male_rid
             )
             fe14_utils.apply_randomized_skills(
-                gd, characters, skills, _FEMALE_AID, female_rid
+                gd, characters, user_config, skills, _FEMALE_AID, female_rid
             )
 
         if user_config.randomize_classes:
@@ -111,5 +110,18 @@ class FE14RandomizePlayerStep(RandomizationStep):
         fe14_utils.apply_randomized_stats(
             gd, rand, female_rid, female_rid, strategy, user_config.passes
         )
+
+        # Nerf a few troublesome characters so that you can reasonably
+        # get through the first few chapters.
+        a000_table_rid = gd.multi_open("person", "GameData/Person/A000.bin.lz")
+        a001_table_rid = gd.multi_open("person", "GameData/Person/A001.bin.lz")
+        fighter_rid = gd.list_key_to_rid(a000_table_rid, "people", "PID_A000_アクスファイター初期")
+        lancer_rid = gd.list_key_to_rid(a000_table_rid, "people", "PID_A000_ランサー増援")
+        a001_boss_rid = gd.list_key_to_rid(a001_table_rid, "people", "PID_A001_ボス")
+        fe14_utils.nerf_character(gd, fighter_rid)
+        fe14_utils.nerf_character(gd, lancer_rid)
+        fe14_utils.nerf_character(gd, a001_boss_rid)
+        # gd.multi_set_dirty("person", "GameData/Person/A000.bin.lz", True)
+        # gd.multi_set_dirty("person", "GameData/Person/A001.bin.lz", True)
 
         gd.set_store_dirty("gamedata", True)

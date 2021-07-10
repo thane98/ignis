@@ -93,11 +93,11 @@ class FE14RandomizationProcess(RandomizationProcess):
             FE14UpdateScriptsStep(),
             FE14RandomizeChestItemsStep(),
             FE14UpdateParalogueUnlocksStep(),
+            FE14RandomizePlayerStep(),
             UnlockHeroBattlesStep(),
             UpdateCastleJoinStep(),
             LeoA001ModelReplacementStep(),
             ApplySongstressSpriteFixStep(),
-            FE14RandomizePlayerStep(),
             SaveGameDataStep(),
             GenerateReportStep(),
         ]

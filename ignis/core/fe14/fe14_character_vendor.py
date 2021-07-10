@@ -23,6 +23,8 @@ _BITFLAG_SWAPS = [
     ("bitflags_7", 0b00011001),
     ("bitflags_8", 0b01100000),
 ]
+_MALE_CORRIN = "PID_プレイヤー男"
+_FEMALE_CORRIN = "PID_プレイヤー女"
 
 
 class FE14CharactersVendor:
@@ -193,8 +195,45 @@ class FE14CharactersVendor:
         return replacements
 
     def generate_character_reports(self):
-        return list(
+        reports = list(
             map(lambda t: self._generate_report_for_character(t[0], t[1]), self.swaps)
+        )
+        return [
+            self._generate_report_for_mu(_MALE_CORRIN, "Corrin (M)"),
+            self._generate_report_for_mu(_FEMALE_CORRIN, "Corrin (F)"),
+            *reports
+        ]
+
+    def _generate_report_for_mu(self, pid, name):
+        char_rid = self.to_rid(pid)
+        primary_class_name = self.gd.display(self.gd.rid(char_rid, "class_1"))
+        secondary_class_name = self.gd.display(self.gd.rid(char_rid, "class_2"))
+        reclass_1_name = self.gd.display(self.gd.rid(char_rid, "reclass_1"))
+        reclass_2_name = self.gd.display(self.gd.rid(char_rid, "reclass_2"))
+        personal_skill_name = self.gd.display(
+            self.gd.rid(char_rid, "personal_skill_normal")
+        )
+        equipped_skills = fe14_utils.get_equipped_skill_names(
+            self.gd, self.skills, char_rid
+        )
+        bases = self.bytes_to_signed_int_list(self.gd.bytes(char_rid, "bases"))
+        growths = self.bytes_to_signed_int_list(self.gd.bytes(char_rid, "growths"))
+        modifiers = self.bytes_to_signed_int_list(self.gd.bytes(char_rid, "modifiers"))
+        level = self.gd.int(char_rid, "level")
+        internal_level = self.gd.int(char_rid, "internal_level")
+        return FE14CharacterReport(
+            name,
+            None,
+            primary_class_name,
+            secondary_class_name,
+            [reclass_1_name, reclass_2_name],
+            personal_skill_name,
+            equipped_skills,
+            bases,
+            growths,
+            modifiers,
+            level,
+            internal_level,
         )
 
     def _generate_report_for_character(self, character, replacing):

@@ -68,7 +68,7 @@ class FE14PersonRandomizationStep(RandomizationStep):
             rid, "personal_skill_normal"
         ):
             dirty = True
-            fe14_utils.apply_randomized_skills(gd, characters, skills, aid, rid)
+            fe14_utils.apply_randomized_skills(gd, characters, user_config, skills, aid, rid)
         if user_config.randomize_classes:
             dirty = True
             # TODO: Just copy weapon ranks from global character to the new one?

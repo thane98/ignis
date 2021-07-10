@@ -26,7 +26,7 @@ class FE14GlobalCharacterRandomizationStep(RandomizationStep):
             replacing_rid = characters.get_original(replacing.pid)
             aid = gd.string(rid, "aid")
             if user_config.randomize_personal_skills:
-                fe14_utils.apply_randomized_skills(gd, characters, skills, aid, rid)
+                fe14_utils.apply_randomized_skills(gd, characters, user_config, skills, aid, rid)
             if user_config.randomize_classes:
                 fe14_utils.apply_randomized_class_set(
                     gd,

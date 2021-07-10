@@ -1,3 +1,4 @@
+import ctypes
 import os
 
 from ignis.model.fe14_route import FE14Route
@@ -7,6 +8,20 @@ from ignis.model.weapon_rank import WeaponRank
 
 
 _SKILL_FIELDS = ["skill_1", "skill_2", "skill_3", "skill_4", "skill_5"]
+
+
+def nerf_character(gd, rid):
+    fields = [("bases", 10, 1, -5), ("growths", 10, 5, 0)]
+    for field_id, k, step_size, limit in fields:
+        stats = list(map(lambda b: ctypes.c_int8(b).value, gd.bytes(rid, field_id)))
+        for _ in range(0, k):
+            if stats[1] > limit:
+                stats[1] -= step_size
+        gd.set_bytes(
+            rid,
+            field_id,
+            bytes(map(lambda b: ctypes.c_uint8(b).value, stats))
+        )
 
 
 def get_equipped_skill_names(gd, skills, char_rid):
@@ -48,21 +63,23 @@ def get_all_files(gd, base_path, ext, chapters, localized=False):
     return files
 
 
-def apply_randomized_skills(gd, characters, skills, aid, rid):
-    personal_skill = characters.get_character_personal_skill(aid)
-    gd.set_rid(rid, "personal_skill_normal", personal_skill)
-    gd.set_rid(rid, "personal_skill_hard", personal_skill)
-    gd.set_rid(rid, "personal_skill_lunatic", personal_skill)
-
-    character_skills = {personal_skill}
-    for field in _SKILL_FIELDS:
-        skill_rid = gd.rid(rid, field)
-        if skill_rid != skills.default_skill():
-            new_skill = skills.random_equip_skill()
-            while new_skill in character_skills:
+def apply_randomized_skills(gd, characters, user_config, skills, aid, rid):
+    personal_skill = None
+    if user_config.randomize_personal_skills:
+        personal_skill = characters.get_character_personal_skill(aid)
+        gd.set_rid(rid, "personal_skill_normal", personal_skill)
+        gd.set_rid(rid, "personal_skill_hard", personal_skill)
+        gd.set_rid(rid, "personal_skill_lunatic", personal_skill)
+    if user_config.randomize_equip_skills:
+        character_skills = {personal_skill}
+        for field in _SKILL_FIELDS:
+            skill_rid = gd.rid(rid, field)
+            if skill_rid != skills.default_skill():
                 new_skill = skills.random_equip_skill()
-            character_skills.add(new_skill)
-            gd.set_rid(rid, field, new_skill)
+                while new_skill in character_skills:
+                    new_skill = skills.random_equip_skill()
+                character_skills.add(new_skill)
+                gd.set_rid(rid, field, new_skill)
 
 
 def apply_randomized_class_set(
