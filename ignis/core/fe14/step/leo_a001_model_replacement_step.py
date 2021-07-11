@@ -26,7 +26,8 @@ class LeoA001ModelReplacementStep(RandomizationStep):
                     gd.copy(source_rid, dest_rid, [])
                     gd.copy(
                         body_rid,
-                        dest_rid, [
+                        dest_rid,
+                        [
                             "body_model",
                             "body_texture",
                             "outer_clothing_model",
@@ -37,7 +38,7 @@ class LeoA001ModelReplacementStep(RandomizationStep):
                             "accessory2_texture",
                             "accessory3_model",
                             "accessory3_texture",
-                        ]
+                        ],
                     )
                     gd.set_string(dest_rid, "name", "AID_法衣裏返しレオン")
                     gd.set_store_dirty("rom4", True)
