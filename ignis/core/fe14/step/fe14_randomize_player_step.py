@@ -78,26 +78,48 @@ class FE14RandomizePlayerStep(RandomizationStep):
                     female_rid, desired_rank=WeaponRank.E, staff_ban=True
                 )
             )
+            male_weapon_006 = gd.key(
+                items.random_weapon_for_character(
+                    male_rid, desired_rank=WeaponRank.E, staff_ban=True
+                )
+            )
+            female_weapon_006 = gd.key(
+                items.random_weapon_for_character(
+                    female_rid, desired_rank=WeaponRank.E, staff_ban=True
+                )
+            )
 
             if not os.path.exists(os.path.join(output_path, "Scripts")):
                 os.mkdir(os.path.join(output_path, "Scripts"))
-            files = ["Scripts/A000.cmb", "Scripts/A002.cmb", "Scripts/A005.cmb"]
+            files = [
+                "Scripts/A000.cmb",
+                "Scripts/A002.cmb",
+                "Scripts/A005.cmb",
+                "Scripts/B006.cmb",
+                "Scripts/C006.cmb",
+            ]
             input_output_pairs = []
             for f in files:
                 path_in_rom = os.path.normpath(os.path.join(rom_path, f))
                 path_in_output = os.path.normpath(os.path.join(output_path, f))
                 if os.path.exists(path_in_output):
                     input_output_pairs.append((path_in_output, path_in_output))
-                else:
+                elif os.path.exists(path_in_rom):
                     input_output_pairs.append((path_in_rom, path_in_output))
+                else:
+                    input_output_pairs.append(None)
             player_randomization_info = PlayerRandomizationInfo(
                 male_class,
                 female_class,
                 male_weapon_a000,
                 female_weapon_a000,
+                male_weapon_006,
+                female_weapon_006,
                 input_output_pairs[0],
                 input_output_pairs[1],
                 input_output_pairs[2],
+                input_output_pairs[3],
+                input_output_pairs[4],
             )
             ignis_core.apply_mu_class_randomization(player_randomization_info)
 
@@ -105,17 +127,31 @@ class FE14RandomizePlayerStep(RandomizationStep):
             user_config.stat_randomization_algorithm
         )
         fe14_utils.apply_randomized_stats(
-            gd, rand, male_rid, male_rid, strategy, user_config.passes
+            gd,
+            rand,
+            male_rid,
+            male_rid,
+            strategy,
+            user_config.passes,
+            weights=[0.15, 0.175, 0.15, 0.1, 0.125, 0.1, 0.1, 0.1],
         )
         fe14_utils.apply_randomized_stats(
-            gd, rand, female_rid, female_rid, strategy, user_config.passes
+            gd,
+            rand,
+            female_rid,
+            female_rid,
+            strategy,
+            user_config.passes,
+            weights=[0.15, 0.175, 0.15, 0.1, 0.125, 0.1, 0.1, 0.1],
         )
 
         # Nerf a few troublesome characters so that you can reasonably
         # get through the first few chapters.
         a000_table_rid = gd.multi_open("person", "GameData/Person/A000.bin.lz")
         a001_table_rid = gd.multi_open("person", "GameData/Person/A001.bin.lz")
-        fighter_rid = gd.list_key_to_rid(a000_table_rid, "people", "PID_A000_アクスファイター初期")
+        fighter_rid = gd.list_key_to_rid(
+            a000_table_rid, "people", "PID_A000_アクスファイター初期"
+        )
         lancer_rid = gd.list_key_to_rid(a000_table_rid, "people", "PID_A000_ランサー増援")
         a001_boss_rid = gd.list_key_to_rid(a001_table_rid, "people", "PID_A001_ボス")
         fe14_utils.nerf_character(gd, fighter_rid)

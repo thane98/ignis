@@ -1,6 +1,8 @@
 from random import Random
 from typing import List
 
+from ignis.core.fe14.step.apply_b016_shura_fix_step import ApplyB016ShuraFixStep
+
 from ignis.core.fe14.step.fe14_randomize_player_step import FE14RandomizePlayerStep
 
 from ignis.core.fe14.step.apply_songstress_sprite_fix_step import (
@@ -98,6 +100,7 @@ class FE14RandomizationProcess(RandomizationProcess):
             UpdateCastleJoinStep(),
             LeoA001ModelReplacementStep(),
             ApplySongstressSpriteFixStep(),
+            ApplyB016ShuraFixStep(),
             SaveGameDataStep(),
             GenerateReportStep(),
         ]

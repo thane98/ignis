@@ -36,7 +36,6 @@ class Ui_FE14UserConfigForm(QWidget):
         self.children_check_box = QCheckBox("Children")
         self.children_check_box.setChecked(True)
         self.player_check_box = QCheckBox("Corrin (EXPERIMENTAL)")
-        self.player_check_box.setChecked(True)
         characters_box_layout = QVBoxLayout()
         characters_box_layout.setAlignment(QtGui.Qt.AlignTop)
         characters_box_layout.addWidget(self.anna_check_box)

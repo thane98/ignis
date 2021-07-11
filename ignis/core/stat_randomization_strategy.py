@@ -35,10 +35,15 @@ class WeightedRedistributeStatsStrategy:
         limits: Tuple[int, int],
         step_size=1,
         passes=20,
+        weights=None,
+        **kwargs,
     ) -> bytes:
         tmp = list(map(lambda b: ctypes.c_int8(b).value, stats))
-        denominator = sum(map(abs, tmp))
-        weights = list(map(lambda b: abs(b) / denominator if b != 0 else 0, tmp))
+        if not weights:
+            denominator = sum(map(abs, tmp))
+            weights = list(map(lambda b: abs(b) / denominator if b != 0 else 0, tmp))
+            min_weight = min(weights)
+            weights = [min_weight if w == 0 else w for w in weights]
         return _redistribute(
             rand,
             tmp,
@@ -57,6 +62,7 @@ class RedistributeStatsStrategy:
         limits: Tuple[int, int],
         step_size=1,
         passes=20,
+        **kwargs,
     ) -> bytes:
         tmp = list(map(lambda b: ctypes.c_int8(b).value, stats))
         return _redistribute(

@@ -138,6 +138,53 @@ pub fn randomize_terrain_scripts(
 }
 
 #[pyfunction]
+pub fn fix_b016_shura_weapons(
+    input_path: String,
+    output_path: String,
+    weapon1: String,
+    weapon2: String,
+) -> PyResult<()> {
+    let mut dirty = false;
+    let weapons = vec![weapon1, weapon2];
+    let mut next_weapons_index = 0;
+    let raw_script = std::fs::read(&input_path)?;
+    let mut script = exalt::disassemble_v3ds(&raw_script)
+        .map_err(|err| Exception::py_err(format!("{:?}", err)))?;
+    for func in &mut script {
+        for i in 1..func.code.len() {
+            let replacement = if let exalt::Opcode::CallByName(text, _) = &func.code[i] {
+                if text == "ev::ItemGainSilent" {
+                    let item = weapons[next_weapons_index].clone();
+                    next_weapons_index = (next_weapons_index + 1) % weapons.len();
+                    Some(item)
+                } else {
+                    None
+                }
+            } else {
+                None
+            };
+            if let Some(iid) = replacement {
+                if i > 0 {
+                    func.code[i - 1] = exalt::Opcode::StrLoad(iid);
+                    dirty = true;
+                }
+            }
+        }
+    }
+    if dirty {
+        let path = Path::new(&output_path);
+        let parent = path
+            .parent()
+            .ok_or(Exception::py_err("Error finding script path parent"))?;
+        let compiled_script = exalt::gen_v3ds_code("B016.cmb", &script)
+            .map_err(|err| Exception::py_err(format!("{:?}", err)))?;
+        std::fs::create_dir_all(parent)?;
+        std::fs::write(path, compiled_script)?;
+    }
+    Ok(())
+}
+
+#[pyfunction]
 pub fn apply_mu_class_randomization(py: Python, info: Py<PlayerRandomizationInfo>) -> PyResult<()> {
     let info = info.try_borrow(py)?;
     let reg = handlebars::Handlebars::new();
@@ -215,6 +262,40 @@ pub fn apply_mu_class_randomization(py: Python, info: Py<PlayerRandomizationInfo
         .map_err(|err| Exception::py_err(format!("{:?}", err)))?;
     std::fs::write(&info.a005_paths.1, compiled_script)?;
 
+    let all_006_chapters = vec![
+        ("B006.cmb", info.b006_paths.clone()),
+        ("C006.cmb", info.c006_paths.clone()),
+    ];
+    for (script_name, paths) in all_006_chapters {
+        if let Some(paths) = &paths {
+            let raw_script = std::fs::read(&paths.0)?;
+            let mut script = exalt::disassemble_v3ds(&raw_script)
+                .map_err(|err| Exception::py_err(format!("{:?}", err)))?;
+            for func in &mut script {
+                if func.function_type == 12 {
+                    let snippet =
+                        String::from_utf8_lossy(include_bytes!("006Snippet.yml")).to_string();
+                    let snippet = reg
+                        .render_template(
+                            &snippet,
+                            &json!({
+                                "mitem": &info.male_weapon_006,
+                                "fitem": &info.female_weapon_006,
+                            }),
+                        )
+                        .map_err(|err| Exception::py_err(err.to_string()))?;
+                    let opcodes = exalt::load_opcodes(&snippet)
+                        .map_err(|err| Exception::py_err(format!("{:?}", err)))?;
+                    func.code.pop();
+                    func.code.extend(opcodes);
+                }
+            }
+            let compiled_script = exalt::gen_v3ds_code(script_name, &script)
+                .map_err(|err| Exception::py_err(format!("{:?}", err)))?;
+            std::fs::write(&paths.1, compiled_script)?;
+        }
+    }
+
     Ok(())
 }
 
@@ -225,5 +306,6 @@ pub fn ignis(_: Python, m: &PyModule) -> PyResult<()> {
     m.add_wrapped(wrap_pyfunction!(randomize_scripts))?;
     m.add_wrapped(wrap_pyfunction!(randomize_terrain_scripts))?;
     m.add_wrapped(wrap_pyfunction!(apply_mu_class_randomization))?;
+    m.add_wrapped(wrap_pyfunction!(fix_b016_shura_weapons))?;
     Ok(())
 }

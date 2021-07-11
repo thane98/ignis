@@ -18,9 +18,7 @@ def nerf_character(gd, rid):
             if stats[1] > limit:
                 stats[1] -= step_size
         gd.set_bytes(
-            rid,
-            field_id,
-            bytes(map(lambda b: ctypes.c_uint8(b).value, stats))
+            rid, field_id, bytes(map(lambda b: ctypes.c_uint8(b).value, stats))
         )
 
 
@@ -131,12 +129,18 @@ def apply_randomized_bitflags(gd, characters, aid, rid1, rid2):
         gd.set_int(rid1, field, value)
 
 
-def apply_randomized_stats(gd, rand, source_rid, destination_rid, strategy, passes):
+def apply_randomized_stats(
+    gd, rand, source_rid, destination_rid, strategy, passes, weights=None
+):
     gd.set_bytes(
         destination_rid,
         "bases",
         strategy.randomize_stats(
-            rand, gd.bytes(source_rid, "bases"), limits=(-5, 100), passes=passes
+            rand,
+            gd.bytes(source_rid, "bases"),
+            limits=(-5, 100),
+            passes=passes,
+            weights=weights,
         ),
     )
     gd.set_bytes(
@@ -148,13 +152,18 @@ def apply_randomized_stats(gd, rand, source_rid, destination_rid, strategy, pass
             limits=(0, 95),
             step_size=5,
             passes=passes,
+            weights=weights,
         ),
     )
     gd.set_bytes(
         destination_rid,
         "modifiers",
         strategy.randomize_stats(
-            rand, gd.bytes(source_rid, "modifiers"), limits=(-3, 3), passes=passes
+            rand,
+            gd.bytes(source_rid, "modifiers"),
+            limits=(-3, 3),
+            passes=passes,
+            weights=weights,
         ),
     )
 

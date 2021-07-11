@@ -201,7 +201,7 @@ class FE14CharactersVendor:
         return [
             self._generate_report_for_mu(_MALE_CORRIN, "Corrin (M)"),
             self._generate_report_for_mu(_FEMALE_CORRIN, "Corrin (F)"),
-            *reports
+            *reports,
         ]
 
     def _generate_report_for_mu(self, pid, name):
