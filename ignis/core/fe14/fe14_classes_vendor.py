@@ -64,6 +64,7 @@ class FE14ClassesVendor:
                 usable_weapons = self.get_usable_weapons(class_1_rid)
                 non_null = list(filter(lambda i: bool(i), usable_weapons))
                 done = len(non_null) > 1 or non_null[0][0] != ItemCategory.STAFF
+
         if (
             class_1.paired_classes[0] == self._default_class()
             and not class_1.paired_classes[1] == self._default_class()
@@ -76,22 +77,24 @@ class FE14ClassesVendor:
             class_2 = class_1.paired_classes[0]
         else:
             class_2 = self.rand.choice(class_1.paired_classes)
+
         class_2_rid = self.jid_to_rid_mapping[class_2]
         reclass_1 = self._get_reclass(
-            self.buckets[(gender, "base")], [class_1, class_2]
+            self.buckets[(gender, "base")], [class_1.jid, class_2]
         )
         reclass_1_rid = self.jid_to_rid_mapping[reclass_1.jid]
         reclass_2 = self._get_reclass(
-            self.buckets[(gender, "base")], [class_1, class_2, reclass_1]
+            self.buckets[(gender, "base")], [class_1.jid, class_2, reclass_1.jid]
         )
         reclass_2_rid = self.jid_to_rid_mapping[reclass_2.jid]
         return class_1_rid, class_2_rid, reclass_1_rid, reclass_2_rid
 
     def _get_reclass(self, bucket, used):
-        valid_classes = list(filter(lambda c: c not in used, bucket))
+        valid_classes = list(filter(lambda c: c.jid not in used, bucket))
         if not valid_classes:
             return self._default_class()
-        return self.rand.choice(valid_classes)
+        else:
+            return self.rand.choice(valid_classes)
 
     def _default_class(self):
         rid, field_id = self.gd.table("jobs")
