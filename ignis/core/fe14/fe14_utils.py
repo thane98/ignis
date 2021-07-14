@@ -83,6 +83,7 @@ def apply_randomized_skills(gd, characters, user_config, skills, aid, rid):
 def apply_randomized_class_set(
     gd,
     characters,
+    classes,
     aid,
     rid,
     ranks_source,
@@ -91,6 +92,8 @@ def apply_randomized_class_set(
     class_level=None,
     staff_only_ban=False,
 ):
+    original_primary_class = gd.rid(ranks_source, "class_1")
+
     c1, c2, r1, r2 = characters.get_character_class_set(
         aid, gender, class_level, staff_only_ban
     )
@@ -98,6 +101,12 @@ def apply_randomized_class_set(
     gd.set_rid(rid, "class_2", c2)
     gd.set_rid(rid, "reclass_1", r1)
     gd.set_rid(rid, "reclass_2", r2)
+
+    # Edge case: Increase the character's level by 20 if going from
+    # regular promoted class to one that's capped at 40.
+    if classes.is_advanced_class(original_primary_class) and not classes.is_capped_at_40_class(original_primary_class):
+        if classes.is_capped_at_40_class(c1):
+            gd.set_int(rid, "level", gd.int(rid, "level") + 20)
 
     # Reconcile character and primary class weapon ranks
     class_weapon_ranks = list(enumerate(WeaponRank.ranks_from_fates_job(gd, c1)))
@@ -115,7 +124,7 @@ def apply_randomized_class_set(
         reverse=True,
     )
 
-    # Transfer highest character exp to corresponding highest for the class
+    # Transfer highest character weapon exp to corresponding highest for the class
     new_exp = [0] * len(sorted_character_exp)
     for i in range(0, len(sorted_character_exp)):
         index, _ = sorted_class_ranks[i]

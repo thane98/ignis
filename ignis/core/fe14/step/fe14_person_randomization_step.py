@@ -20,6 +20,7 @@ class FE14PersonRandomizationStep(RandomizationStep):
 
     def run(self, gd, user_config, dependencies):
         rand = dependencies.rand
+        classes = dependencies.classes
         chapters = dependencies.chapters
         characters = dependencies.characters
         skills = dependencies.skills
@@ -34,14 +35,14 @@ class FE14PersonRandomizationStep(RandomizationStep):
             people = gd.items(rid, "people")
             for rid in people:
                 has_changes = self._randomize_person(
-                    gd, rid, rand, user_config, characters, skills
+                    gd, rid, rand, user_config, characters, classes, skills
                 )
                 dirty = dirty or has_changes
             if dirty:
                 gd.multi_set_dirty("person", f, True)
 
     @staticmethod
-    def _randomize_person(gd, rid, rand, user_config, characters, skills):
+    def _randomize_person(gd, rid, rand, user_config, characters, classes, skills):
         # See if the character matches one that we're randomizing
         dirty = False
         char = characters.get_global_character(gd.key(rid), gd.string(rid, "aid"))
@@ -75,7 +76,7 @@ class FE14PersonRandomizationStep(RandomizationStep):
             dirty = True
             # TODO: Just copy weapon ranks from global character to the new one?
             #       This avoids edge cases with weapon reassignment
-            fe14_utils.apply_randomized_class_set(gd, characters, aid, rid, rid, rand)
+            fe14_utils.apply_randomized_class_set(gd, characters, classes, aid, rid, rid, rand)
         if user_config.stat_randomization_algorithm != StatRandomizationAlgorithm.NONE:
             dirty = True
             stat_strategy = stat_randomization_strategy.from_algorithm(

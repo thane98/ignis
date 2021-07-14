@@ -815,11 +815,13 @@ classes:
   - jid: JID_バトラー男
     gender: male
     level: advanced
+    capped_at_40: true
     paired_classes: [ "JID_ロッドナイト男", "JID_無し男" ]
   - jid: JID_メイド女
     gender: female
     level: advanced
     paired_classes: [ "JID_ロッドナイト女", "JID_無し男" ]
+    capped_at_40: true
   - jid: JID_ガルー男
     gender: male
     level: base
@@ -856,6 +858,7 @@ classes:
     gender: female
     level: base
     paired_classes: [ "JID_無し男", "JID_無し男" ]
+    capped_at_40: true
   - jid: JID_村人男
     gender: male
     level: base
@@ -868,42 +871,52 @@ classes:
     gender: male
     level: advanced
     paired_classes: [ "JID_無し男", "JID_無し男" ]
+    capped_at_40: true
   - jid: JID_ヴァンガード男
     gender: male
     level: advanced
     paired_classes: [ "JID_無し男", "JID_無し男" ]
+    capped_at_40: true
   - jid: JID_神軍師男
     gender: male
     level: advanced
     paired_classes: [ "JID_無し男", "JID_無し男" ]
+    capped_at_40: true
   - jid: JID_マスターロード女
     gender: female
     level: advanced
     paired_classes: [ "JID_無し男", "JID_無し男" ]
+    capped_at_40: true
   - jid: JID_魔戦士男
     gender: male
     level: advanced
     paired_classes: [ "JID_無し男", "JID_無し男" ]
+    capped_at_40: true
   - jid: JID_魔戦士女
     gender: female
     level: advanced
     paired_classes: [ "JID_無し男", "JID_無し男" ]
+    capped_at_40: true
   - jid: JID_ダークペガサス男
     gender: male
     level: advanced
     paired_classes: [ "JID_無し男", "JID_無し男" ]
+    capped_at_40: true
   - jid: JID_ダークペガサス女
     gender: female
     level: advanced
     paired_classes: [ "JID_無し男", "JID_無し男" ]
+    capped_at_40: true
   - jid: JID_シューター男
     gender: male
     level: advanced
     paired_classes: [ "JID_無し男", "JID_無し男" ]
+    capped_at_40: true
   - jid: JID_魔女女
     gender: female
     level: advanced
     paired_classes: [ "JID_無し男", "JID_無し男" ]
+    capped_at_40: true
 items:
   Sword:
     E:

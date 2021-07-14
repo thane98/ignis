@@ -35,6 +35,16 @@ class FE14ClassesVendor:
             else:
                 self.buckets[key] = [cls]
 
+    def is_advanced_class(self, rid):
+        key = self.gd.key(rid)
+        info = self.jid_to_info_mapping.get(key)
+        return bool(info and info.level == "advanced")
+
+    def is_capped_at_40_class(self, rid):
+        key = self.gd.key(rid)
+        info = self.jid_to_info_mapping.get(key)
+        return bool(info and info.capped_at_40)
+
     def get_class_level(self, rid):
         return self.jid_to_info_mapping[self.gd.key(rid)].level
 

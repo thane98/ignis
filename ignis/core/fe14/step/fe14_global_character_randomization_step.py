@@ -16,6 +16,7 @@ class FE14GlobalCharacterRandomizationStep(RandomizationStep):
 
     def run(self, gd, user_config, dependencies):
         rand = dependencies.rand
+        classes = dependencies.classes
         characters = dependencies.characters
         skills = dependencies.skills
         stat_strategy = stat_randomization_strategy.from_algorithm(
@@ -28,17 +29,6 @@ class FE14GlobalCharacterRandomizationStep(RandomizationStep):
             if user_config.randomize_personal_skills:
                 fe14_utils.apply_randomized_skills(
                     gd, characters, user_config, skills, aid, rid
-                )
-            if user_config.randomize_classes:
-                fe14_utils.apply_randomized_class_set(
-                    gd,
-                    characters,
-                    aid,
-                    rid,
-                    replacing_rid,
-                    rand,
-                    char.gender,
-                    replacing.class_level,
                 )
             if user_config.randomize_join_order:
                 fe14_utils.apply_randomized_bitflags(
@@ -54,6 +44,18 @@ class FE14GlobalCharacterRandomizationStep(RandomizationStep):
                     replacement = characters.get_replacement(gd.key(parent))
                     if replacement:
                         gd.set_rid(rid, "parent", characters.to_rid(replacement))
+            if user_config.randomize_classes:
+                fe14_utils.apply_randomized_class_set(
+                    gd,
+                    characters,
+                    classes,
+                    aid,
+                    rid,
+                    replacing_rid,
+                    rand,
+                    char.gender,
+                    replacing.class_level,
+                )
 
             fe14_utils.apply_randomized_stats(
                 gd, rand, replacing_rid, rid, stat_strategy, user_config.passes

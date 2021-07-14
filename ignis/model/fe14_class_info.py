@@ -8,3 +8,4 @@ class FE14ClassInfo(BaseModel):
     gender: Literal["male", "female"]
     level: Literal["base", "advanced"]
     paired_classes: List[str] = None
+    capped_at_40: bool = False

@@ -27,6 +27,7 @@ class FE14RandomizePlayerStep(RandomizationStep):
         output_path = dependencies.output_path
         rand = dependencies.rand
         characters = dependencies.characters
+        classes = dependencies.classes
         skills = dependencies.skills
         items = dependencies.items
 
@@ -45,6 +46,7 @@ class FE14RandomizePlayerStep(RandomizationStep):
             fe14_utils.apply_randomized_class_set(
                 gd,
                 characters,
+                classes,
                 _MALE_AID,
                 male_rid,
                 male_rid,
@@ -56,6 +58,7 @@ class FE14RandomizePlayerStep(RandomizationStep):
             fe14_utils.apply_randomized_class_set(
                 gd,
                 characters,
+                classes,
                 _FEMALE_AID,
                 female_rid,
                 female_rid,
