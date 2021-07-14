@@ -18,6 +18,7 @@ class FE14SkillsVendor:
         rid, field_id = gd.table("skills")
         self.default_skill_rid = gd.list_get(rid, field_id, 0)
         self.all_skills = gd.items(rid, field_id)[1:]  # Get rid of the null skill.
+        self.all_equip_skills = list(filter(lambda s: s not in self.personal_skills, self.all_skills))
         self.seid_to_rid = gd.key_to_rid_mapping(rid, field_id)
 
     def default_skill(self):
@@ -31,6 +32,6 @@ class FE14SkillsVendor:
 
     def random_equip_skill(self):
         if self.user_config.include_all_skills_in_skill_pool:
-            return self.rand.choice(self.all_skills)
+            return self.rand.choice(self.all_equip_skills)
         else:
             return self.seid_to_rid[self.rand.choice(self.equip_skills)]
