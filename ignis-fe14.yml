@@ -6,6 +6,7 @@ characters:
     class_level: advanced
     generation: 1
     routes: [ "Conquest", "Revelation" ]
+    corrinsexual: true
   - pid: PID_フェリシア
     voice_set: FELICIA
     gender: female
@@ -126,6 +127,7 @@ characters:
     class_level: advanced
     generation: 1
     routes: [ "Birthright", "Revelation" ]
+    corrinsexual: true
   - pid: PID_ニシキ
     voice_set: NISHIKI
     gender: male
@@ -144,12 +146,14 @@ characters:
     class_level: advanced
     generation: 1
     routes: [ "Birthright", "Revelation" ]
+    corrinsexual: true
   - pid: PID_アシュラ
     voice_set: ASYURA
     gender: male
     class_level: advanced
     generation: 1
     routes: [ "Birthright", "Conquest", "Revelation" ]
+    corrinsexual: true
   - pid: PID_エリーゼ
     voice_set: ELISE
     gender: female
@@ -252,24 +256,28 @@ characters:
     class_level: advanced
     generation: 1
     routes: [ "Birthright", "Conquest" ]
+    corrinsexual: true
   - pid: PID_フウガ
     voice_set: FUUGA
     gender: male
     class_level: advanced
     generation: 1
     routes: [ "Revelation" ]
+    corrinsexual: true
   - pid: PID_ユキムラ
     voice_set: YUKIMURA
     gender: male
     class_level: advanced
     generation: 1
     routes: [ "Birthright" ]
+    corrinsexual: true
   - pid: PID_フローラ
     voice_set: FLORA
     gender: female
     class_level: advanced
     generation: 1
     routes: [ "Conquest", "Revelation" ]
+    corrinsexual: true
   - pid: PID_モズメ
     voice_set: MOZUME
     gender: female
@@ -415,6 +423,7 @@ characters:
     generation: 1
     flags: [ "anna" ]
     routes: [ "Birthright", "Conquest", "Revelation" ]
+    corrinsexual: true
   - pid: PID_マルス
     voice_set: MARTH
     gender: male

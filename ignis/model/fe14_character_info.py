@@ -12,3 +12,4 @@ class FE14CharacterInfo(BaseModel):
     generation: Literal[1, 2]
     flags: List[str] = []
     routes: List[FE14Route] = []
+    corrinsexual: bool = False

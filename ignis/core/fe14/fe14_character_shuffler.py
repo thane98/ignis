@@ -11,6 +11,8 @@ class FE14CharacterShuffler(CharacterShuffler):
         self._predicates = [lambda c: c.generation == 2]
         if user_config.same_sex_swaps_only:
             self._predicates.append(lambda c: c.gender == "female")
+        if user_config.separate_pool_for_corrinsexuals:
+            self._predicates.append(lambda c: c.corrinsexual)
 
     def predicates(self):
         return self._predicates

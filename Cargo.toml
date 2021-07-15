@@ -15,6 +15,8 @@ features = ["extension-module"]
 [dependencies]
 paragon = { git = "https://github.com/thane98/paragon", rev = "63c4be1" }
 exalt = { git = "https://github.com/thane98/exalt-rs", rev = "55bab5f" }
+asset-pack-rs = { git = "https://github.com/thane98/asset-pack-rs", rev = "9a16eca" }
+mila = { git = "https://github.com/thane98/mila", rev = "6b0190e" }
 rand = "0.8.4"
 rand_pcg = "0.3.1"
 handlebars = "4.1.0"

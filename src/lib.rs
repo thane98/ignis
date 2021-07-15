@@ -303,6 +303,28 @@ pub fn apply_mu_class_randomization(py: Python, info: Py<PlayerRandomizationInfo
     Ok(())
 }
 
+#[pyfunction]
+pub fn apply_elise_animation_fix(raw_archive: Vec<u8>, output_path: String) -> PyResult<()> {
+    let snippet = String::from_utf8_lossy(include_bytes!("EliseAnimFixSnippet.txt")).to_string();
+    let bin_archive = mila::BinArchive::from_bytes(&raw_archive)
+        .map_err(|err| Exception::py_err(format!("{:?}", err)))?;
+    let mut unpacked_archive = asset_pack_rs::unpack(&bin_archive)
+        .map_err(|err| Exception::py_err(format!("{:?}", err)))?;
+    if !unpacked_archive.contains("uEAnim_Eliserep_non") {
+        unpacked_archive.push_str("\n");
+        unpacked_archive.push_str(&snippet);
+        let bin_archive = asset_pack_rs::pack(&unpacked_archive)
+            .map_err(|err| Exception::py_err(format!("{:?}", err)))?;
+        let raw_archive = bin_archive.serialize()
+            .map_err(|err| Exception::py_err(format!("{:?}", err)))?;
+        let compressed_archive = mila::LZ13CompressionFormat {}
+            .compress(&raw_archive)
+            .map_err(|err| Exception::py_err(format!("{:?}", err)))?;
+        std::fs::write(output_path, compressed_archive)?;
+    }
+    Ok(())
+}
+
 #[pymodule]
 pub fn ignis(_: Python, m: &PyModule) -> PyResult<()> {
     m.add_class::<paragon::GameData>()?;
@@ -311,5 +333,6 @@ pub fn ignis(_: Python, m: &PyModule) -> PyResult<()> {
     m.add_wrapped(wrap_pyfunction!(randomize_terrain_scripts))?;
     m.add_wrapped(wrap_pyfunction!(apply_mu_class_randomization))?;
     m.add_wrapped(wrap_pyfunction!(fix_b016_shura_weapons))?;
+    m.add_wrapped(wrap_pyfunction!(apply_elise_animation_fix))?;
     Ok(())
 }

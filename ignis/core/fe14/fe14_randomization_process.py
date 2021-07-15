@@ -1,6 +1,8 @@
 from random import Random
 from typing import List
 
+from ignis.core.fe14.step.elise_animation_fix_step import EliseAnimationFixStep
+
 from ignis.core.fe14.step.apply_b016_shura_fix_step import ApplyB016ShuraFixStep
 
 from ignis.core.fe14.step.fe14_randomize_player_step import FE14RandomizePlayerStep
@@ -31,6 +33,7 @@ from ignis.core.fe14.step.fe14_update_paralogue_unlocks_step import (
     FE14UpdateParalogueUnlocksStep,
 )
 from ignis.core.fe14.step.fe14_update_scripts_step import FE14UpdateScriptsStep
+from ignis.core.fe14.step.feral_dragon_fix_step import FeralDragonFixStep
 from ignis.core.fe14.step.handover_randomization_step import HandoverRandomizationStep
 from ignis.core.fe14.step.leo_a001_model_replacement_step import (
     LeoA001ModelReplacementStep,
@@ -101,6 +104,8 @@ class FE14RandomizationProcess(RandomizationProcess):
             LeoA001ModelReplacementStep(),
             ApplySongstressSpriteFixStep(),
             ApplyB016ShuraFixStep(),
+            FeralDragonFixStep(),
+            EliseAnimationFixStep(),
             SaveGameDataStep(),
             GenerateReportStep(),
         ]
