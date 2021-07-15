@@ -26,10 +26,22 @@ class FE14UpdateDialogueStep(RandomizationStep):
         kana_name = gd.message("m/GameData.bin.lz", True, _KANA_MPID)
         male_kana_replacement = characters.get_replacement(_MALE_KANA)
         female_kana_replacement = characters.get_replacement(_FEMALE_KANA)
-        male_kana_replacement_rid = characters.to_rid(male_kana_replacement) if male_kana_replacement else None
-        female_kana_replacement_rid = characters.to_rid(female_kana_replacement) if female_kana_replacement else None
-        male_kana_replacement_name = gd.display(male_kana_replacement_rid) if male_kana_replacement_rid else None
-        female_kana_replacement_name = gd.display(female_kana_replacement_rid) if female_kana_replacement_rid else None
+        male_kana_replacement_rid = (
+            characters.to_rid(male_kana_replacement) if male_kana_replacement else None
+        )
+        female_kana_replacement_rid = (
+            characters.to_rid(female_kana_replacement)
+            if female_kana_replacement
+            else None
+        )
+        male_kana_replacement_name = (
+            gd.display(male_kana_replacement_rid) if male_kana_replacement_rid else None
+        )
+        female_kana_replacement_name = (
+            gd.display(female_kana_replacement_rid)
+            if female_kana_replacement_rid
+            else None
+        )
 
         # Get dialogue replacements.
         replacements = characters.get_dialogue_replacements()

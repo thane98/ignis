@@ -104,7 +104,9 @@ def apply_randomized_class_set(
 
     # Edge case: Increase the character's level by 20 if going from
     # regular promoted class to one that's capped at 40.
-    if classes.is_advanced_class(original_primary_class) and not classes.is_capped_at_40_class(original_primary_class):
+    if classes.is_advanced_class(
+        original_primary_class
+    ) and not classes.is_capped_at_40_class(original_primary_class):
         if classes.is_capped_at_40_class(c1):
             gd.set_int(rid, "level", gd.int(rid, "level") + 20)
 

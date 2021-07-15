@@ -13,11 +13,14 @@ _BANNED_PIDS = {"PID_A001_ボス", "PID_A005_リョウマ"}
 
 class FE14PersonRandomizationStep(RandomizationStep):
     def should_run(self, user_config) -> bool:
-        return user_config.randomize_classes \
-               or user_config.randomize_join_order \
-               or user_config.randomize_personal_skills \
-               or user_config.randomize_equip_skills \
-               or user_config.stat_randomization_algorithm != StatRandomizationAlgorithm.NONE
+        return (
+            user_config.randomize_classes
+            or user_config.randomize_join_order
+            or user_config.randomize_personal_skills
+            or user_config.randomize_equip_skills
+            or user_config.stat_randomization_algorithm
+            != StatRandomizationAlgorithm.NONE
+        )
 
     def name(self) -> str:
         return "Chapter Character/Person Randomization (FE14)"
@@ -80,7 +83,9 @@ class FE14PersonRandomizationStep(RandomizationStep):
             dirty = True
             # TODO: Just copy weapon ranks from global character to the new one?
             #       This avoids edge cases with weapon reassignment
-            fe14_utils.apply_randomized_class_set(gd, characters, classes, aid, rid, rid, rand)
+            fe14_utils.apply_randomized_class_set(
+                gd, characters, classes, aid, rid, rid, rand
+            )
         if user_config.stat_randomization_algorithm != StatRandomizationAlgorithm.NONE:
             dirty = True
             stat_strategy = stat_randomization_strategy.from_algorithm(

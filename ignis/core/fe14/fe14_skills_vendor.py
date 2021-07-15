@@ -18,7 +18,9 @@ class FE14SkillsVendor:
         rid, field_id = gd.table("skills")
         self.default_skill_rid = gd.list_get(rid, field_id, 0)
         self.all_skills = gd.items(rid, field_id)[1:]  # Get rid of the null skill.
-        self.all_equip_skills = list(filter(lambda s: s not in self.personal_skills, self.all_skills))
+        self.all_equip_skills = list(
+            filter(lambda s: s not in self.personal_skills, self.all_skills)
+        )
         self.seid_to_rid = gd.key_to_rid_mapping(rid, field_id)
 
     def default_skill(self):

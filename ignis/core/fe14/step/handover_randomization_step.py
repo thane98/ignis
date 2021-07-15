@@ -30,7 +30,9 @@ class HandoverRandomizationStep(RandomizationStep):
             if gd.file_exists(f, False):
                 rid = gd.multi_open("person", f)
                 people = gd.items(rid, "people")
-                if self.randomize_people(gd, user_config, characters, classes, rand, people):
+                if self.randomize_people(
+                    gd, user_config, characters, classes, rand, people
+                ):
                     gd.multi_set_dirty("person", f, True)
 
     @staticmethod
