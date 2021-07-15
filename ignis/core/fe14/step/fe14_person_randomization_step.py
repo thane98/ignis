@@ -13,7 +13,11 @@ _BANNED_PIDS = {"PID_A001_ボス", "PID_A005_リョウマ"}
 
 class FE14PersonRandomizationStep(RandomizationStep):
     def should_run(self, user_config) -> bool:
-        return user_config.randomize_join_order
+        return user_config.randomize_classes \
+               or user_config.randomize_join_order \
+               or user_config.randomize_personal_skills \
+               or user_config.randomize_equip_skills \
+               or user_config.stat_randomization_algorithm != StatRandomizationAlgorithm.NONE
 
     def name(self) -> str:
         return "Chapter Character/Person Randomization (FE14)"
@@ -86,20 +90,3 @@ class FE14PersonRandomizationStep(RandomizationStep):
                 gd, rand, rid, rid, stat_strategy, user_config.passes
             )
         return dirty
-
-    @staticmethod
-    def _get_handover_files(gd, user_config):
-        handovers = []
-        if FE14Route.BIRTHRIGHT in user_config.routes and gd.file_exists(
-            "GameData/Person/A_HANDOVER.bin.lz", False
-        ):
-            handovers.append("GameData/Person/A_HANDOVER.bin.lz")
-        if FE14Route.CONQUEST in user_config.routes and gd.file_exists(
-            "GameData/Person/B_HANDOVER.bin.lz", False
-        ):
-            handovers.append("GameData/Person/B_HANDOVER.bin.lz")
-        if FE14Route.REVELATION in user_config.routes and gd.file_exists(
-            "GameData/Person/C_HANDOVER.bin.lz", False
-        ):
-            handovers.append("GameData/Person/C_HANDOVER.bin.lz")
-        return handovers
