@@ -39,11 +39,7 @@ class FE14GlobalCharacterRandomizationStep(RandomizationStep):
                     rid, "internal_level", gd.int(replacing_rid, "internal_level")
                 )
                 gd.set_int(rid, "support_route", _ALL_SUPPORT_ROUTES)
-                parent = gd.rid(rid, "parent")
-                if parent and parent != characters.default_character():
-                    replacement = characters.get_replacement(gd.key(parent))
-                    if replacement:
-                        gd.set_rid(rid, "parent", characters.to_rid(replacement))
+                gd.set_rid(rid, "parent", characters.get_parent(replacing_rid))
             if user_config.randomize_classes:
                 fe14_utils.apply_randomized_class_set(
                     gd,

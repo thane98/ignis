@@ -11,8 +11,9 @@ class Ui_MainWindow(QWidget):
 
         self.warning_box = QGroupBox()
         self.warning_label = QLabel(
-            "NOTE: Randomizing the same files repeatedly can lead to a buggy game. "
-            "For the best results, start with a clean output folder."
+            "<ul><li>Do NOT randomize the same files repeatedly.</li>"
+            "<li>Do NOT start from the Branch of Fate if you have not played the prologue "
+            "since randomizing.</li></ul>"
         )
         self.warning_label.setWordWrap(True)
 

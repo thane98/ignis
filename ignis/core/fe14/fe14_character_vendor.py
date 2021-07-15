@@ -96,6 +96,14 @@ class FE14CharactersVendor:
                 if aid not in self.aid_to_rid:
                     self.aid_to_rid[aid] = rid
 
+    def get_parent(self, rid):
+        parent = self.gd.rid(rid, "parent")
+        if parent:
+            replacement = self.get_replacement(self.gd.key(parent))
+            if replacement:
+                return self.to_rid(replacement)
+        return None
+
     def default_character(self):
         rid, field_id = self.gd.table("characters")
         return self.gd.list_get(rid, field_id, 0)
