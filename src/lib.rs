@@ -191,28 +191,32 @@ pub fn apply_mu_class_randomization(py: Python, info: Py<PlayerRandomizationInfo
 
     // A000: Inject new opcodes into the script to reclass the player immediately
     // after loading the chapter resources.
-    let a000_snippet = String::from_utf8_lossy(include_bytes!("A000Snippet.yml")).to_string();
-    let rendered_a000_snippet = reg
-        .render_template(
-            &a000_snippet,
-            &json!({
-                "mclass": &info.male_class,
-                "fclass": &info.female_class,
-                "mitem": &info.male_weapon_a000,
-                "fitem": &info.female_weapon_a000,
-            }),
-        )
-        .map_err(|err| Exception::py_err(err.to_string()))?;
-    let opcodes = exalt::load_opcodes(&rendered_a000_snippet)
-        .map_err(|err| Exception::py_err(format!("{:?}", err)))?;
     let raw_script = std::fs::read(&info.a000_paths.0)?;
     let mut script = exalt::disassemble_v3ds(&raw_script)
         .map_err(|err| Exception::py_err(format!("{:?}", err)))?;
     for func in &mut script {
         if func.function_type == 7 {
+            let snippet = String::from_utf8_lossy(include_bytes!("A000Snippet.yml")).to_string();
+            let rendered_snippet = reg
+                .render_template(
+                    &snippet,
+                    &json!({
+                        "mclass": &info.male_class,
+                        "fclass": &info.female_class,
+                        "mitem": &info.male_weapon_a000,
+                        "fitem": &info.female_weapon_a000,
+                    }),
+                )
+                .map_err(|err| Exception::py_err(err.to_string()))?;
+            let opcodes = exalt::load_opcodes(&rendered_snippet)
+                .map_err(|err| Exception::py_err(format!("{:?}", err)))?;
             func.frame_size += 1;
             func.code = opcodes;
-            break;
+        }
+        if func.function_type == 8 {
+            let snippet = String::from_utf8_lossy(include_bytes!("A000Snippet2.yml")).to_string();
+            func.code = exalt::load_opcodes(&snippet)
+                .map_err(|err| Exception::py_err(format!("{:?}", err)))?;
         }
     }
     let compiled_script = exalt::gen_v3ds_code("A000.cmb", &script)

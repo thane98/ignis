@@ -1,0 +1,85 @@
+- VarAddr: 0
+- CallByName:
+    - "ev::UnitGetPlayer"
+    - 0
+- CompleteAssign
+- VarLoad: 0
+- JumpZero: l0
+- VarAddr: 1
+- IntLoad: 13
+- VarLoad: 0
+- IntLoad: 6
+- IntLoad: 1
+- CallByName:
+    - "ev::UnitGetCapability"
+    - 3
+- Subtract
+- IntLoad: 2
+- Subtract
+- CompleteAssign
+- VarLoad: 0
+- VarLoad: 0
+- CallByName:
+    - "ev::UnitGetHP"
+    - 1
+- VarLoad: 1
+- Subtract
+- CallByName:
+    - "ev::UnitSetHP"
+    - 2
+- Consume
+- VarLoad: 0
+- CallByName:
+    - "ev::UnitGetX"
+    - 1
+- VarLoad: 0
+- CallByName:
+    - "ev::UnitGetY"
+    - 1
+- CallByName:
+    - "ev::CameraSetPosition"
+    - 2
+- Consume
+- CallByName:
+    - "ev::CameraInstant"
+    - 0
+- Consume
+- Label: l0
+- VarAddr: 2
+- StrLoad: PID_A000_リョウマ
+- CallByName:
+    - "ev::UnitGetByPID"
+    - 1
+- CompleteAssign
+- VarLoad: 2
+- StrLoad: SPID_強制スキル発動
+- CallByName:
+    - "ev::UnitSetPrivateSkill"
+    - 2
+- Consume
+- IntLoad: 1
+- CallByName:
+    - "ev::ChapterSetHideSystemMenu"
+    - 1
+- Consume
+- IntLoad: 1
+- CallByName:
+    - "ev::ChapterSetHideProperty"
+    - 1
+- Consume
+- IntLoad: 1
+- CallByName:
+    - "ev::ChapterSetHideTrade"
+    - 1
+- Consume
+- IntLoad: 1
+- CallByName:
+    - "ev::ChapterSetHideDouble"
+    - 1
+- Consume
+- IntLoad: 1
+- CallByName:
+    - "ev::ChapterSetHideAI"
+    - 1
+- Consume
+- ReturnFalse
