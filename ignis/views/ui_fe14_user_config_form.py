@@ -70,7 +70,9 @@ class Ui_FE14UserConfigForm(QWidget):
         self.randomize_join_order_check_box.setChecked(True)
         self.same_sex_only_check_box = QCheckBox("Same-Sex Swaps Only")
         self.same_sex_only_check_box.setChecked(True)
-        self.corrinsexuals_pool_check_box = QCheckBox("Use a Separate Pool for \"Corrinsexuals\"")
+        self.corrinsexuals_pool_check_box = QCheckBox(
+            'Use a Separate Pool for "Corrinsexuals"'
+        )
         join_order_layout = QVBoxLayout()
         join_order_layout.setAlignment(QtGui.Qt.AlignTop)
         join_order_layout.addWidget(self.randomize_join_order_check_box)

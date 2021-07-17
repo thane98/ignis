@@ -6,7 +6,8 @@ from ignis.controllers.main_window import MainWindow
 from ignis.model.configs import Configs
 from ignis.utils import theme_utils
 
-faulthandler.enable(all_threads=True)
+for handler in logging.root.handlers[:]:
+    logging.root.removeHandler(handler)
 
 logging.basicConfig(
     handlers=[
@@ -14,7 +15,10 @@ logging.basicConfig(
         logging.StreamHandler(sys.stdout),
     ]
 )
-logging.info("Ignis Beta 1")
+
+faulthandler.enable(all_threads=True)
+
+logging.info("Ignis Beta 2")
 
 try:
     from PySide6.QtWidgets import QApplication

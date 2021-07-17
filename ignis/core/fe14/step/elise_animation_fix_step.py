@@ -23,7 +23,9 @@ class EliseAnimationFixStep(RandomizationStep):
         characters = dependencies.characters
 
         replacement_pid = characters.get_replacement(_ELISE_PID)
-        replacement_rid = characters.to_rid(replacement_pid) if replacement_pid else None
+        replacement_rid = (
+            characters.to_rid(replacement_pid) if replacement_pid else None
+        )
         replacement_aid = gd.string(replacement_rid, "aid") if replacement_rid else None
 
         if not replacement_aid:
