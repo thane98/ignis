@@ -3,6 +3,7 @@ from typing import List
 
 from ignis.core.fe14.step.apply_b016_shura_fix_step import ApplyB016ShuraFixStep
 from ignis.core.fe14.step.fe14_animation_fixes_step import FE14AnimationFixesStep
+from ignis.core.fe14.step.fe14_personal_skill_declassification_step import FE14PersonalSkillDeclassificationStep
 
 from ignis.core.fe14.step.fe14_randomize_player_step import FE14RandomizePlayerStep
 
@@ -105,6 +106,7 @@ class FE14RandomizationProcess(RandomizationProcess):
             ApplyB016ShuraFixStep(),
             FeralDragonFixStep(),
             FE14AnimationFixesStep(),
+            FE14PersonalSkillDeclassificationStep(),
             SaveGameDataStep(),
             GenerateReportStep(),
         ]
