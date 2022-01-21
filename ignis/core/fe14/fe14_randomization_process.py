@@ -1,7 +1,10 @@
 from random import Random
 from typing import List
 
-from ignis.core.fe14.step.elise_animation_fix_step import EliseAnimationFixStep
+from ignis.core.fe14.step.add_cross_generation_assets_step import (
+    AddCrossGenerationAssetsStep,
+)
+from ignis.core.fe14.step.fe14_animation_fixes_step import FE14AnimationFixesStep
 
 from ignis.core.fe14.step.apply_b016_shura_fix_step import ApplyB016ShuraFixStep
 
@@ -101,11 +104,12 @@ class FE14RandomizationProcess(RandomizationProcess):
             FE14RandomizePlayerStep(),
             UnlockHeroBattlesStep(),
             UpdateCastleJoinStep(),
+            AddCrossGenerationAssetsStep(),
             LeoA001ModelReplacementStep(),
             ApplySongstressSpriteFixStep(),
             ApplyB016ShuraFixStep(),
             FeralDragonFixStep(),
-            EliseAnimationFixStep(),
+            FE14AnimationFixesStep(),
             SaveGameDataStep(),
             GenerateReportStep(),
         ]

@@ -7,3 +7,7 @@
   type: single
   filename: castle/castle_join.bin.lz
   typename: CastleJoinFile
+- id: facedata
+  type: single
+  filename: face/FaceData.bin.lz
+  typename: FaceDataFile

@@ -10,6 +10,7 @@ class Ui_MainWindow(QWidget):
         super().__init__()
 
         self.warning_box = QGroupBox()
+        self.warning_box.setContentsMargins(2, 2, 2, 2)
         self.warning_label = QLabel(
             "<ul><li>Do NOT randomize the same files repeatedly.</li>"
             "<li>Do NOT start from the Branch of Fate if you have not played the prologue "
@@ -27,15 +28,14 @@ class Ui_MainWindow(QWidget):
         self.randomizer_config = FE14UserConfigForm()
 
         layout = QVBoxLayout()
-        layout.setContentsMargins(5, 5, 5, 5)
+        layout.setSpacing(0)
+        layout.setContentsMargins(2, 2, 2, 2)
         layout.addWidget(self.warning_box)
         layout.addWidget(self.inputs_form)
         layout.addWidget(self.randomizer_config)
         layout.addWidget(self.randomize_button)
         layout.setStretch(1, 1)
         self.setLayout(layout)
-
-        self.resize(800, 700)
 
         self.setWindowIcon(QIcon("ignis.ico"))
         self.setWindowTitle("Ignis - FE14 Randomizer")

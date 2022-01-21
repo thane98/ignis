@@ -1,5 +1,6 @@
 import ctypes
 from random import Random
+from typing import List
 
 from ignis.core.fe14 import fe14_utils
 
@@ -173,6 +174,16 @@ class FE14CharactersVendor:
                 bitflags[f] = char_bits | new_bits
             self.character_bitflags[aid] = bitflags
             return bitflags
+
+    def get_gen1_to_gen2_swaps(self) -> List[FE14CharacterInfo]:
+        return list(
+            map(
+                lambda s: s[0],
+                filter(
+                    lambda s: s[0].generation == 1 and s[1].generation == 2, self.swaps
+                ),
+            )
+        )
 
     def get_dialogue_replacements(self):
         replacements = {}

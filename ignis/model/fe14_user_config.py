@@ -23,8 +23,9 @@ class FE14UserConfig:
     randomize_player: bool
     same_sex_swaps_only: bool
     songstress_sprite_fix: bool
-    elise_animation_fix: bool
+    apply_animation_fixes: bool
     feral_dragon_head_fix: bool
     separate_pool_for_corrinsexuals: bool
+    mix_generations: bool
     seed: int
     passes: int

@@ -35,7 +35,7 @@ class FE14UserConfigForm(Ui_FE14UserConfigForm):
             unlock_hero_battles=self.unlock_hero_battles_check_box.isChecked(),
             add_anna_to_castle_join=self.add_anna_check_box.isChecked(),
             songstress_sprite_fix=self.add_sprite_fix_box.isChecked(),
-            elise_animation_fix=self.elise_animation_fix_check_box.isChecked(),
+            apply_animation_fixes=self.animation_fixes_check_box.isChecked(),
             feral_dragon_head_fix=self.feral_dragon_head_fix_check_box.isChecked(),
             include_anna_in_character_pool=self.add_anna_check_box.isChecked(),
             include_amiibo_units_in_character_pool=self.amiibo_check_box.isChecked(),
@@ -44,6 +44,7 @@ class FE14UserConfigForm(Ui_FE14UserConfigForm):
             randomize_player=self.player_check_box.isChecked(),
             same_sex_swaps_only=self.same_sex_only_check_box.isChecked(),
             separate_pool_for_corrinsexuals=self.corrinsexuals_pool_check_box.isChecked(),
+            mix_generations=self.mix_generations_check_box.isChecked(),
             seed=self.seed_input.value(),
             passes=self.passes_spin_box.value(),
         )
