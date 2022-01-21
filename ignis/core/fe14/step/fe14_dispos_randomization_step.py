@@ -1,3 +1,5 @@
+from ignis.model.item_category import ItemCategory
+
 from ignis.core.fe14 import fe14_utils
 from ignis.core.randomization_step import RandomizationStep
 
@@ -32,6 +34,7 @@ class FE14DisposRandomizationStep(RandomizationStep):
 
     def run(self, gd, user_config, dependencies):
         chapters = dependencies.chapters
+        classes = dependencies.classes
         characters = dependencies.characters
         items = dependencies.items
 
@@ -49,13 +52,15 @@ class FE14DisposRandomizationStep(RandomizationStep):
                     continue
                 spawns = gd.items(spawn_table, "spawns")
                 for spawn in spawns:
-                    has_changes = self.randomize_spawn(gd, characters, items, spawn)
+                    has_changes = self.randomize_spawn(
+                        gd, characters, classes, items, spawn
+                    )
                     dirty = dirty or has_changes
             if dirty:
                 gd.multi_set_dirty("dispos", f, True)
 
     @staticmethod
-    def randomize_spawn(gd, characters, items, spawn):
+    def randomize_spawn(gd, characters, classes, items, spawn):
         dirty = False
 
         pid = gd.string(spawn, "pid")
@@ -69,9 +74,21 @@ class FE14DisposRandomizationStep(RandomizationStep):
         if char := characters.get_global_character(pid):
             i = 0
             added_at_least_one_weapon = False
+
+            character_class = gd.rid(char, "class_1")
+            class_weapons = list(
+                filter(
+                    lambda p: p is not None, classes.get_usable_weapons(character_class)
+                )
+            )
+            assign_extra_non_staff_weapon = len(class_weapons) > 1 and any(
+                filter(lambda p: p[0] == ItemCategory.STAFF, class_weapons)
+            )
+
             while i < len(_ITEM_FIELDS) and gd.rid(spawn, _ITEM_FIELDS[i]):
                 item_rid = gd.rid(spawn, _ITEM_FIELDS[i])
                 iid = gd.key(item_rid)
+
                 if (
                     iid not in _DIVINE_WEAPONS
                     and gd.int(item_rid, "weapon_category") < 20
@@ -80,10 +97,18 @@ class FE14DisposRandomizationStep(RandomizationStep):
                     gd.set_rid(spawn, _ITEM_FIELDS[i], weapon)
                     added_at_least_one_weapon = True
                     dirty = True
+                    if weapon and assign_extra_non_staff_weapon:
+                        assign_extra_non_staff_weapon = gd.int(weapon, "weapon_category") in {12, 13}
                 i += 1
             if not added_at_least_one_weapon and i < len(_ITEM_FIELDS):
                 weapon = items.random_weapon_for_character(char)
                 gd.set_rid(spawn, _ITEM_FIELDS[i], weapon)
                 dirty = True
-
+                i += 1
+                if weapon and assign_extra_non_staff_weapon:
+                    assign_extra_non_staff_weapon = gd.int(weapon, "weapon_category") in {12, 13}
+            if assign_extra_non_staff_weapon and i < len(_ITEM_FIELDS):
+                weapon = items.random_weapon_for_character(char, staff_ban=True)
+                gd.set_rid(spawn, _ITEM_FIELDS[i], weapon)
+                dirty = True
         return dirty

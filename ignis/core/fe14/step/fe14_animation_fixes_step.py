@@ -34,9 +34,13 @@ class FE14AnimationFixesStep(RandomizationStep):
         kaze_replacement_aid = self._get_replacement_aid(gd, characters, _KAZE_PID)
 
         if elice_replacement_aid:
-            dirty = self._apply_fix(gd, rom3, elice_replacement_aid, _ELISE_ANIMATION_SET)
+            dirty = self._apply_fix(
+                gd, rom3, elice_replacement_aid, _ELISE_ANIMATION_SET
+            )
         if hinoka_replacement_aid:
-            dirty = self._apply_fix(gd, rom3, hinoka_replacement_aid, _HINOKA_ANIMATION_SET)
+            dirty = self._apply_fix(
+                gd, rom3, hinoka_replacement_aid, _HINOKA_ANIMATION_SET
+            )
         if kaze_replacement_aid:
             dirty = self._apply_fix(gd, rom3, kaze_replacement_aid, _KAZE_ANIMATION_SET)
 
