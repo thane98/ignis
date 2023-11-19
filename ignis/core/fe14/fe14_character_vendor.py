@@ -26,6 +26,9 @@ _BITFLAG_SWAPS = [
 _MALE_CORRIN = "PID_プレイヤー男"
 _FEMALE_CORRIN = "PID_プレイヤー女"
 
+_MALE_KANA = "PID_カンナ男"
+_FEMALE_KANA = "PID_カンナ女"
+
 
 class FE14CharactersVendor:
     def __init__(
@@ -264,6 +267,12 @@ class FE14CharactersVendor:
         modifiers = self.bytes_to_signed_int_list(self.gd.bytes(char_rid, "modifiers"))
         level = self.gd.int(char_rid, "level")
         internal_level = self.gd.int(char_rid, "internal_level")
+        # add markers in the report to distinguish between male and female kana
+        for (kana_pid, suffix) in [(_MALE_KANA, " (M)"), (_FEMALE_KANA, " (F)")]:
+            if char_rid == self.to_rid(kana_pid):
+                name += suffix
+            if replacing_rid == self.to_rid(kana_pid):
+                replacing_name += suffix
         return FE14CharacterReport(
             name,
             replacing_name,
