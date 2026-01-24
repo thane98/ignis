@@ -22,6 +22,7 @@ class FE14UserConfig:
     randomize_join_order: bool
     randomize_player: bool
     same_sex_swaps_only: bool
+    characters_keep_their_own_stats: bool
     songstress_sprite_fix: bool
     apply_animation_fixes: bool
     feral_dragon_head_fix: bool

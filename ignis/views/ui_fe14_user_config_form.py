@@ -73,11 +73,16 @@ class Ui_FE14UserConfigForm(QWidget):
         self.corrinsexuals_pool_check_box = QCheckBox(
             'Use a Separate Pool for "Corrinsexuals"'
         )
+        self.characters_keep_their_own_stats_check_box = QCheckBox(
+            'Swapped characters keep their own stats'
+        )
+        self.same_sex_only_check_box.setChecked(True)
         join_order_layout = QVBoxLayout()
         join_order_layout.setAlignment(QtGui.Qt.AlignTop)
         join_order_layout.addWidget(self.randomize_join_order_check_box)
         join_order_layout.addWidget(self.same_sex_only_check_box)
         join_order_layout.addWidget(self.corrinsexuals_pool_check_box)
+        join_order_layout.addWidget(self.characters_keep_their_own_stats_check_box)
         join_order_box = QGroupBox("Join Order Randomization")
         join_order_box.setLayout(join_order_layout)
 

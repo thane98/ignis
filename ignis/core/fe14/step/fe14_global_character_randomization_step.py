@@ -53,7 +53,13 @@ class FE14GlobalCharacterRandomizationStep(RandomizationStep):
                     replacing.class_level,
                 )
 
-            fe14_utils.apply_randomized_stats(
-                gd, rand, replacing_rid, rid, stat_strategy, user_config.passes
-            )
+            if user_config.characters_keep_their_own_stats:
+                cached_rid = characters.get_original(char.pid)
+                fe14_utils.apply_randomized_stats(
+                    gd, rand, cached_rid, rid, stat_strategy, user_config.passes
+                )
+            else:
+                fe14_utils.apply_randomized_stats(
+                    gd, rand, replacing_rid, rid, stat_strategy, user_config.passes
+                )
         gd.set_store_dirty("gamedata", True)

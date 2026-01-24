@@ -76,7 +76,7 @@ class FE14CharactersVendor:
             primary_class = gd.rid(rid, "class_1")
             c.class_level = classes.get_class_level(primary_class)
 
-        # Create the swaps list
+        # Create the swaps list (of [original_pid, replacement_pid] entries)
         # If join order randomization is disabled, use an identity mapping
         if user_config.randomize_join_order:
             shuffler = FE14CharacterShuffler(user_config, rand)
