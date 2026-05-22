@@ -87,7 +87,7 @@ class FE14CharactersVendor:
 
         # Cache originals.
         for character in characters:
-            rid = gd.new_instance("Person")
+            rid = gd.new_instance("Person", gd.store_number_of(rid))
             gd.copy(self.pid_to_rid[character.pid], rid, [])
             self.originals[character.pid] = rid
 

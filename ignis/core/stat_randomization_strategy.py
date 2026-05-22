@@ -13,17 +13,18 @@ def _redistribute(
     k: int,
     weights=None,
 ) -> bytes:
-    indices = [i for i in range(0, len(stats))]
-    choices = rand.choices(population=indices, weights=weights, k=k * 2)
-    for i in range(0, len(choices), 2):
-        source = choices[i]
-        dest = choices[i + 1]
-        if (
-            stats[source] - step_size >= limits[0]
-            and stats[dest] + step_size <= limits[1]
-        ):
-            stats[source] -= step_size
-            stats[dest] += step_size
+    if weights and sum(weights) > 0:
+        indices = [i for i in range(0, len(stats))]
+        choices = rand.choices(population=indices, weights=weights, k=k * 2)
+        for i in range(0, len(choices), 2):
+            source = choices[i]
+            dest = choices[i + 1]
+            if (
+                stats[source] - step_size >= limits[0]
+                and stats[dest] + step_size <= limits[1]
+            ):
+                stats[source] -= step_size
+                stats[dest] += step_size
     return bytes(map(lambda b: ctypes.c_uint8(b).value, stats))
 
 

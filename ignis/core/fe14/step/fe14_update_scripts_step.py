@@ -42,7 +42,7 @@ class FE14UpdateScriptsStep(RandomizationStep):
     def _get_bev_files(gd, chapters):
         files = set()
         all_cid_parts = set(map(lambda c: c[1][4:], chapters.enabled_chapters()))
-        for bev_file in gd.list_files("Scripts/bev", "*.cmb"):
+        for bev_file in gd.list_files("Scripts/bev", "*.cmb", False):
             basename = os.path.basename(bev_file)
             if len(basename) >= 4 and basename[:4] in all_cid_parts:
                 files.add(bev_file)

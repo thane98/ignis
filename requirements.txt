@@ -3,3 +3,4 @@ PySide6
 pydantic
 pyyaml
 virtualenv
+setuptools
